@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Herobtn from "./Herobtn";
 
 const Hero = () => {
   return (
@@ -13,6 +14,10 @@ const Hero = () => {
         width={800}
         height={0}
       ></Image>
+      <div className=" flex gap-6">
+        <Herobtn text="view events" color="standard" />
+        <Herobtn text="Book table" color="pink" />
+      </div>
     </div>
   );
 };
