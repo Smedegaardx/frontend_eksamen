@@ -1,10 +1,9 @@
-import Iconbtn from "./components/Iconbtn";
-import { FaSnapchatGhost } from "react-icons/fa";
+import Hero from "./components/Hero";
 
 export default function Home() {
   return (
     <div>
-      <Iconbtn icon={FaSnapchatGhost}></Iconbtn>
+      <Hero />
     </div>
   );
 }
