@@ -50,7 +50,7 @@ const Header = () => {
       <div className="flex justify-center">
         <HeaderLogo></HeaderLogo>
       </div>
-      <div className="flex gap-5">
+      <div className="flex gap-8 items-center">
         <HeaderBtn
           text="Home"
           link={"/anthon"}
@@ -88,7 +88,7 @@ const Header = () => {
           width={100}
           height={0}
           alt="Pink line"
-          className="absolute bottom-7 transition-all duration-300 ease-out"
+          className="absolute bottom-6 transition-all duration-300 ease-out"
           style={{
             left: `${underline.left}px`,
             width: `${underline.width}px`,
