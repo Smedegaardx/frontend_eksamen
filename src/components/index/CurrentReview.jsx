@@ -1,4 +1,4 @@
-const CurrentComment = ({ activeReview, setActiveReview }) => {
+const CurrentReview = ({ activeReview, setActiveReview }) => {
   return (
     <div className="flex gap-5">
       <div
@@ -17,4 +17,4 @@ const CurrentComment = ({ activeReview, setActiveReview }) => {
   );
 };
 
-export default CurrentComment;
+export default CurrentReview;

@@ -5,7 +5,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaSnapchatGhost } from "react-icons/fa";
 
-const CommentParagraph = ({ API, activeReview }) => {
+const ReviewParagraph = ({ API, activeReview }) => {
   let currentReview = API.find((review) => review.id == activeReview);
   console.log(API);
   console.log(currentReview);
@@ -34,4 +34,4 @@ const CommentParagraph = ({ API, activeReview }) => {
   );
 };
 
-export default CommentParagraph;
+export default ReviewParagraph;

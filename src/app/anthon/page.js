@@ -1,4 +1,4 @@
-import CommentsSection from "@/components/index/CommentsSection";
+import ReviewSection from "@/components/index/ReviewSection";
 import Hero from "../../components/index/Hero";
 import Header from "@/components/Header/Header";
 
@@ -19,7 +19,7 @@ export default async function Home() {
     <div>
       <Hero />
       <Header></Header>
-      <CommentsSection API={Testimonials}></CommentsSection>
+      <ReviewSection API={Testimonials}></ReviewSection>
     </div>
   );
 }
