@@ -1,21 +1,35 @@
 import Image from "next/image";
 
-const CommentParagraph = () => {
+import Iconbtn from "../Iconbtn";
+import { FaFacebookF } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaSnapchatGhost } from "react-icons/fa";
+
+const CommentParagraph = ({ API, activeReview }) => {
+  let currentReview = API.find((review) => review.id == activeReview);
+  console.log(API);
+  console.log(currentReview);
+
   return (
     <div className="flex flex-col items-center">
       <Image
-        src="/assets/content-img/testimonial_1.jpg"
-        alt="Image"
-        height={210}
-        width={210}
+        src={`http://localhost:4000/${currentReview.asset.url}`}
+        alt={currentReview.asset.alt}
+        height={currentReview.asset.height}
+        width={currentReview.asset.width}
       ></Image>
-      <h2 className="text-xl mt-10">Lorem, ipsum.</h2>
+      <h2 className="text-xl mt-10">{currentReview.name}</h2>
       <p className="text-lg max-w-200 text-center mt-5">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis
-        quod enim voluptatum voluptatem voluptas sed voluptates nihil dolorem
-        similique sint, repellendus, cupiditate sequi quasi velit earum eos?
-        Illum, nesciunt nemo.
+        {currentReview.content}
       </p>
+      <div className="flex gap-5 my-10">
+        <Iconbtn icon={FaFacebookF} link={currentReview.facebook}></Iconbtn>
+        <Iconbtn icon={FaTwitter} link={currentReview.twitter}></Iconbtn>
+        <Iconbtn
+          icon={FaSnapchatGhost}
+          link={"https://www.snapchat.com/"}
+        ></Iconbtn>
+      </div>
     </div>
   );
 };
