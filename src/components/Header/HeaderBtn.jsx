@@ -1,7 +1,13 @@
 import Link from "next/link";
-import Image from "next/image";
 
-const HeaderBtn = ({ setActivePage, activePage, text, link }) => {
+const HeaderBtn = ({
+  setActivePage,
+  activePage,
+  text,
+  link,
+  onMouseEnter,
+  onMouseLeave,
+}) => {
   let isActive = false;
   if (activePage == text) {
     isActive = "active";
@@ -9,23 +15,19 @@ const HeaderBtn = ({ setActivePage, activePage, text, link }) => {
 
   return (
     <Link
+      data-page={text}
       href={link}
       onClick={() => setActivePage(text)}
       className="flex flex-col"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       <h1
         data-active={isActive}
-        className="text-2xl uppercase p-2 active:text-[#FF2A70]"
+        className="text-2xl uppercase p-2 active:text-[#FF2A70] hover:text-[#FF2A70]"
       >
         {text}
       </h1>
-      <Image
-        src="/assets/bottom_line2.png"
-        width={100}
-        height={0}
-        alt="Pink line"
-        className="self-center"
-      ></Image>
     </Link>
   );
 };

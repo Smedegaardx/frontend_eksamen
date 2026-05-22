@@ -1,14 +1,39 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import HeaderLogo from "./HeaderLogo";
 import HeaderBtn from "./HeaderBtn";
 
 const Header = () => {
   const [activePage, setActivePage] = useState("Home");
+  const [underline, setUnderline] = useState({
+    left: 0,
+    width: 0,
+  });
+
+  const moveUnderline = (e) => {
+    const button = e.currentTarget;
+
+    setUnderline({
+      left: button.offsetLeft,
+      width: button.offsetWidth,
+    });
+  };
+
+  const returnToActive = () => {
+    const activeButton = document.querySelector(`[data-page="${activePage}"]`);
+
+    if (!activeButton) return;
+
+    setUnderline({
+      left: activeButton.offsetLeft,
+      width: activeButton.offsetWidth,
+    });
+  };
 
   return (
-    <div
+    <nav
       className="grid grid-cols-2 py-6 border-y-4 border-y-(--color-brand) 
      relative overflow-hidden
 
@@ -31,27 +56,46 @@ const Header = () => {
           link={"/anthon"}
           setActivePage={setActivePage}
           activePage={activePage}
+          onMouseEnter={moveUnderline}
+          onMouseLeave={returnToActive}
         ></HeaderBtn>
         <HeaderBtn
           text="Events"
           link={"/anthon"}
           setActivePage={setActivePage}
           activePage={activePage}
+          onMouseEnter={moveUnderline}
+          onMouseLeave={returnToActive}
         ></HeaderBtn>
         <HeaderBtn
           text="Book Table"
           link={"/anthon"}
           setActivePage={setActivePage}
           activePage={activePage}
+          onMouseEnter={moveUnderline}
+          onMouseLeave={returnToActive}
         ></HeaderBtn>
         <HeaderBtn
           text="Contact us"
           link={"/anthon"}
           setActivePage={setActivePage}
           activePage={activePage}
+          onMouseEnter={moveUnderline}
+          onMouseLeave={returnToActive}
         ></HeaderBtn>
+        <Image
+          src="/assets/bottom_line2.png"
+          width={100}
+          height={0}
+          alt="Pink line"
+          className="absolute bottom-5 transition-all duration-300 ease-out"
+          style={{
+            left: `${underline.left}px`,
+            width: `${underline.width}px`,
+          }}
+        ></Image>
       </div>
-    </div>
+    </nav>
   );
 };
 
