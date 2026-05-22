@@ -1,8 +1,10 @@
-const Iconbtn = ({ icon: Icon }) => {
+import Link from "next/link";
+
+const Iconbtn = ({ icon: Icon, link }) => {
   return (
-    <button className="p-2 border m-10">
+    <Link className="p-2 border" href={link}>
       <Icon />
-    </button>
+    </Link>
   );
 };
 
