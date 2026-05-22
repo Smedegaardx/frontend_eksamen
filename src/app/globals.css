@@ -19,3 +19,4 @@ body {
 
 @custom-variant pink (&:where([data-color=pink], [data-color=pink] *));
 @custom-variant standard (&:where([data-color=standard], [data-color=standard] *));
+@custom-variant active (&:where([data-active=active], [data-active=active] *));
