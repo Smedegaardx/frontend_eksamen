@@ -88,7 +88,7 @@ const Header = () => {
           width={100}
           height={0}
           alt="Pink line"
-          className="absolute bottom-5 transition-all duration-300 ease-out"
+          className="absolute bottom-7 transition-all duration-300 ease-out"
           style={{
             left: `${underline.left}px`,
             width: `${underline.width}px`,
