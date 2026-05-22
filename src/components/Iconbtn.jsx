@@ -1,6 +1,6 @@
 const Iconbtn = ({ icon: Icon }) => {
   return (
-    <button className="p-2 border m-10">
+    <button className="p-2 border">
       <Icon />
     </button>
   );

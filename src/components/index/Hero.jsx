@@ -1,7 +1,7 @@
 "use client";
 
 import HeroCTA from "./HeroCTA";
-import HeroBtn from "./HeroBtn";
+import Herobtn from "./Herobtn";
 
 import Image from "next/image";
 import { useState } from "react";
@@ -102,7 +102,7 @@ const Hero = () => {
           ease: [0.25, 0.46, 0.45, 0.94],
         }}
       >
-        <HeroBtn text="view events" />
+        <Herobtn text="view events" />
         <HeroCTA text="Book table" />
       </motion.div>
     </div>
