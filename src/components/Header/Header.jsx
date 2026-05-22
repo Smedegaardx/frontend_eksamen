@@ -50,7 +50,7 @@ const Header = () => {
       <div className="flex justify-center">
         <HeaderLogo></HeaderLogo>
       </div>
-      <div className="flex">
+      <div className="flex gap-5">
         <HeaderBtn
           text="Home"
           link={"/anthon"}

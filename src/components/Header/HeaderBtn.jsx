@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LettersPullUp as FlippingText } from "./FlippingText";
 
 const HeaderBtn = ({
   setActivePage,
@@ -22,12 +23,13 @@ const HeaderBtn = ({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <h1
-        data-active={isActive}
-        className="text-2xl uppercase p-2 active:text-[#FF2A70] hover:text-[#FF2A70]"
-      >
-        {text}
-      </h1>
+      <div>
+        <FlippingText
+          text={text}
+          className="active:text-(--color-brand)"
+          data={isActive}
+        ></FlippingText>
+      </div>
     </Link>
   );
 };
