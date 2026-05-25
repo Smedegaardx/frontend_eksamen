@@ -22,7 +22,7 @@ export default async function Home() {
     <div>
       <Header></Header>
       <Siteheader title="Events"></Siteheader>
-      <EventList API={EventsAPI}></EventList>
+      <EventList events={EventsAPI}></EventList>
       <Footer></Footer>
     </div>
   );

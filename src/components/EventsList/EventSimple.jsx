@@ -11,7 +11,7 @@ const EventSimple = ({ event, imagelast }) => {
     />
   );
 
-  const description = <EventDescription API={event} imagelast={imagelast} />;
+  const description = <EventDescription event={event} imagelast={imagelast} />;
 
   return (
     <div className="grid grid-cols-2 bg-black">
