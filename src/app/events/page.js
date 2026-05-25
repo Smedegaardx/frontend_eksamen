@@ -16,12 +16,13 @@ async function getEvents() {
 
 export default async function Home() {
   const EventsAPI = await getEvents();
+  console.log(EventsAPI);
 
   return (
     <div>
       <Header></Header>
       <Siteheader title="Events"></Siteheader>
-      <EventList API={EventsAPI}></EventList>
+      <EventList events={EventsAPI}></EventList>
       <Footer></Footer>
     </div>
   );

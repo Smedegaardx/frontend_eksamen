@@ -3,14 +3,14 @@
 import { useState } from "react";
 import EventSimple from "@/components/EventsList/EventSimple";
 
-const EventList = ({ API }) => {
+const EventList = ({ events }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const eventsPerPage = 3;
-  const totalPages = Math.ceil(API.length / eventsPerPage);
+  const totalPages = Math.ceil(events.length / eventsPerPage);
 
   const startIndex = (currentPage - 1) * eventsPerPage;
-  const currentEvents = API.slice(startIndex, startIndex + eventsPerPage);
+  const currentEvents = events.slice(startIndex, startIndex + eventsPerPage);
 
   return (
     <div className="bg-[url(/assets/bg/pattern_bg.jpg)] py-20 flex flex-col">
