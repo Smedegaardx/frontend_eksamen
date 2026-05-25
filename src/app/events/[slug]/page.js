@@ -1,4 +1,7 @@
+import AddComment from "@/components/EventPage/AddComment";
 import Comments from "@/components/EventPage/Comments";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header/Header";
 
 const EventPage = async ({ params }) => {
   const { slug } = await params;
@@ -20,7 +23,10 @@ const EventPage = async ({ params }) => {
 
   return (
     <main>
+      <Header></Header>
       <Comments API={comments}></Comments>
+      <AddComment></AddComment>
+      <Footer></Footer>
     </main>
   );
 };
