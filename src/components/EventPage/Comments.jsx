@@ -1,17 +1,18 @@
 import SingleComment from "./SingleComment";
 
-const Comments = ({ API }) => {
-  console.log(API);
+const Comments = ({ comments }) => {
+  const sortedComments = [...comments].sort((a, b) => a.id - b.id);
 
   return (
     <div className="bg-[url(/assets/bg/pattern_bg.jpg)]">
-      <div className="mx-auto max-w-400 py-10 ">
+      <div className="mx-auto max-w-400 py-10">
         <h1 className="uppercase text-5xl font-extrabold">
-          {API.length} comments
+          {sortedComments.length} comments
         </h1>
-        {API?.length ? (
-          API.map((comment) => (
-            <SingleComment comment={comment} key={comment.id}></SingleComment>
+
+        {sortedComments.length ? (
+          sortedComments.map((comment) => (
+            <SingleComment comment={comment} key={comment.id} />
           ))
         ) : (
           <p className="text-2xl mt-4 text-(--color-brand)">

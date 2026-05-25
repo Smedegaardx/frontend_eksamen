@@ -1,5 +1,4 @@
-import AddComment from "@/components/EventPage/AddComment";
-import Comments from "@/components/EventPage/Comments";
+import CommentSection from "@/components/EventPage/CommentSection";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header/Header";
 
@@ -24,8 +23,10 @@ const EventPage = async ({ params }) => {
   return (
     <main>
       <Header></Header>
-      <Comments API={comments}></Comments>
-      <AddComment></AddComment>
+      <CommentSection
+        eventId={event.id}
+        initialComments={comments}
+      ></CommentSection>
       <Footer></Footer>
     </main>
   );
