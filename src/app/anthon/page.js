@@ -14,7 +14,7 @@ async function getTestimonials() {
 }
 
 async function getComments() {
-  const res = await fetch("http://localhost:4000/comments?eventId=1");
+  const res = await fetch("http://localhost:4000/comments?eventId=4");
 
   if (!res.ok) {
     throw new Error("Failed to fetch API");

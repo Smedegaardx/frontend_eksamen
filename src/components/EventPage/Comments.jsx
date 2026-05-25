@@ -9,9 +9,15 @@ const Comments = ({ API }) => {
         <h1 className="uppercase text-5xl font-extrabold">
           {API.length} comments
         </h1>
-        {API.map((comment) => (
-          <SingleComment comment={comment} key={comment.id}></SingleComment>
-        ))}
+        {API?.length ? (
+          API.map((comment) => (
+            <SingleComment comment={comment} key={comment.id}></SingleComment>
+          ))
+        ) : (
+          <p className="text-2xl mt-4 text-(--color-brand)">
+            Be the first to leave a comment!
+          </p>
+        )}
       </div>
     </div>
   );
