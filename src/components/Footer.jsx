@@ -1,6 +1,10 @@
 import Image from "next/image";
 import FooterParagraph from "./FooterParagraph";
 import FooterContent from "./FooterContent";
+import Iconbtn from "./Iconbtn";
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaSnapchatGhost } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -60,27 +64,12 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-3">
           <p>Stay Connected</p>
           <div className="flex flex-row gap-3">
-            <FooterContent
-              date=""
-              paragraph=""
-              img="/assets/icon/x.svg"
-              width={48}
-              height={48}
+            <Iconbtn icon={FaFacebookF} link={"https://www.facebook.com/"} />
+            <Iconbtn
+              icon={FaSnapchatGhost}
+              link={"https://www.snapchat.com/"}
             />
-            <FooterContent
-              date=""
-              paragraph=""
-              img="/assets/icon/x.svg"
-              width={48}
-              height={48}
-            />
-            <FooterContent
-              date=""
-              paragraph=""
-              img="/assets/icon/x.svg"
-              width={48}
-              height={48}
-            />
+            <Iconbtn icon={FaInstagram} link={"https://www.instagram.com/"} />
           </div>
         </div>
         <div>
