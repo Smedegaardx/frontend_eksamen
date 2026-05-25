@@ -1,3 +1,5 @@
+import Button from "../Button";
+
 const AddComment = () => {
   return (
     <div className="bg-[url(/assets/bg/pattern_bg.jpg)]">
@@ -15,11 +17,13 @@ const AddComment = () => {
               placeholder="Your Email"
             />
           </div>
-
           <textarea
             className="border border-white p-6 min-h-40 h-80 max-h-200 placeholder:text-white placeholder:text-lg"
             placeholder="Your Comment"
           />
+        </div>
+        <div className="mt-10 justify-self-end">
+          <Button buttonText="submit"></Button>
         </div>
       </div>
     </div>
