@@ -16,6 +16,7 @@ async function getEvents() {
 
 export default async function Home() {
   const EventsAPI = await getEvents();
+  console.log(EventsAPI);
 
   return (
     <div>
