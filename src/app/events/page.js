@@ -5,7 +5,7 @@ import Header from "@/components/Header/Header";
 import Siteheader from "@/components/Siteheader";
 
 async function getEvents() {
-  const res = await fetch("http://localhost:4000/events/1");
+  const res = await fetch("http://localhost:4000/events");
 
   if (!res.ok) {
     throw new Error("Failed to fetch API");
