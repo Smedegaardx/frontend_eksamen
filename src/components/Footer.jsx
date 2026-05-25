@@ -60,9 +60,9 @@ const Footer = () => {
         </div>
       </section>
       <section className="grid grid-cols-3">
-        <p>Night Club - All Rights Reserved</p>
+        <p className="text-neutral-500">Night Club - All Rights Reserved</p>
         <div className="flex flex-col items-center gap-3">
-          <p>Stay Connected</p>
+          <p>Stay Connected With Us</p>
           <div className="flex flex-row gap-3">
             <Iconbtn icon={FaFacebookF} link={"https://www.facebook.com/"} />
             <Iconbtn
@@ -72,8 +72,8 @@ const Footer = () => {
             <Iconbtn icon={FaInstagram} link={"https://www.instagram.com/"} />
           </div>
         </div>
-        <div>
-          <p>Copyright © NightClub</p>
+        <div className="justify-self-end">
+          <p className="text-neutral-500">Copyright © NightClub</p>
         </div>
       </section>
     </footer>

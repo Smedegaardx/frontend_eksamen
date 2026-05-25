@@ -13,7 +13,7 @@ const SingleComment = ({ comment }) => {
           Posted {formattedDate}
         </span>
       </h2>
-      <p className="text-[#C4C4C4] text-lg mt-5">{comment.content}</p>
+      <p className="text-neutral-400 text-lg mt-5">{comment.content}</p>
     </div>
   );
 };

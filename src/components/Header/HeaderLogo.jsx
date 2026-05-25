@@ -5,7 +5,7 @@ const HeaderLogo = () => {
   return (
     <Link href="/">
       <Image
-        src="/assets/Logo.png"
+        src="/assets/icon/Logo_main.svg"
         alt="Night Club logo"
         width={220}
         height={0}
