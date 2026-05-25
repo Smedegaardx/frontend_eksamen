@@ -53,7 +53,7 @@ const Header = () => {
       <div className="flex gap-8 items-center">
         <HeaderBtn
           text="Home"
-          link={"/anthon"}
+          link={"/"}
           setActivePage={setActivePage}
           activePage={activePage}
           onMouseEnter={moveUnderline}
@@ -61,7 +61,7 @@ const Header = () => {
         ></HeaderBtn>
         <HeaderBtn
           text="Events"
-          link={"/anthon"}
+          link={"/events"}
           setActivePage={setActivePage}
           activePage={activePage}
           onMouseEnter={moveUnderline}
