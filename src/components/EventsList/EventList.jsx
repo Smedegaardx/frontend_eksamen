@@ -26,13 +26,13 @@ const EventList = ({ API }) => {
         <p>No events found</p>
       )}
 
-      <div className="self-center my-20 flex gap-4">
+      <div className="self-center my-20 flex gap-4 text-2xl">
         {currentPage > 1 && (
           <button
             onClick={() => setCurrentPage(currentPage - 1)}
             className="cursor-pointer"
           >
-            &lt; tilbage
+            &lt; prev
           </button>
         )}
 
@@ -42,7 +42,7 @@ const EventList = ({ API }) => {
             onClick={() => setCurrentPage(index + 1)}
             className={
               currentPage === index + 1
-                ? "text-(--color-brand) cursor-pointer"
+                ? "text-(--color-brand) underline cursor-pointer"
                 : "cursor-pointer"
             }
           >
@@ -55,7 +55,7 @@ const EventList = ({ API }) => {
             onClick={() => setCurrentPage(currentPage + 1)}
             className="cursor-pointer"
           >
-            næste &gt;
+            next &gt;
           </button>
         )}
       </div>
