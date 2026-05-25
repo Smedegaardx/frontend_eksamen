@@ -19,7 +19,7 @@ const Hero = () => {
 
   return (
     <div
-      className=" bg-cover bg-center max-w-[1920px] h-[777px] bg-blend-overlay bg-stone-800 flex flex-col justify-center items-center"
+      className=" bg-cover bg-center max-w-480 h-195 bg-blend-overlay bg-stone-800 flex flex-col justify-center items-center"
       style={{
         backgroundImage: `url(${bg})`,
       }}
