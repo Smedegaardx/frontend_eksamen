@@ -73,7 +73,12 @@ const CurrentTrack = ({
         }}
       />
       <div className="flex gap-8">
-        <Image src={track.cover} height={300} width={300} alt="billede"></Image>
+        <Image
+          src={track.cover}
+          height={300}
+          width={300}
+          alt={`Cover for the song ${track.title}`}
+        ></Image>
         <div className="w-full flex flex-col justify-evenly">
           <h2 className="uppercase text-2xl font-bold">{track.title}</h2>
 

@@ -31,7 +31,7 @@ const TrackSection = () => {
   const track = tracks[currentTrack];
 
   return (
-    <section className="bg-black pt-10">
+    <section className="bg-black pt-10 pb-20">
       <Sectionheader title="night club track"></Sectionheader>
       <CurrentTrack
         tracks={tracks}
@@ -42,6 +42,12 @@ const TrackSection = () => {
         setIsPlaying={setIsPlaying}
         audioRef={audioRef}
       ></CurrentTrack>
+      <TrackSelector
+        tracks={tracks}
+        setCurrentTrack={setCurrentTrack}
+        setIsPlaying={setIsPlaying}
+        audioRef={audioRef}
+      ></TrackSelector>
     </section>
   );
 };
