@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const HeroCTA = ({ text }) => {
+const HeroCTA = ({ text, link }) => {
   return (
-    <Link href="/">
+    <Link href={link}>
       <motion.button
         initial={{
           background:

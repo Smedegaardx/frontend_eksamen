@@ -1,12 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import HeaderLogo from "./HeaderLogo";
 import HeaderBtn from "./HeaderBtn";
 
 const Header = () => {
-  const [activePage, setActivePage] = useState("Home");
+  const pathname = usePathname();
+
+  const getActivePage = () => {
+    if (pathname === "/") return "Home";
+    if (pathname === "/events") return "Events";
+    if (pathname === "/book-table") return "Book Table";
+    if (pathname === "/contact") return "Contact us";
+    return "Home";
+  };
+
+  const activePage = getActivePage();
+
   const [underline, setUnderline] = useState({
     left: 0,
     width: 0,
@@ -32,10 +44,14 @@ const Header = () => {
     });
   };
 
+  useEffect(() => {
+    returnToActive();
+  }, [pathname]);
+
   return (
     <nav
       className="grid grid-cols-2 py-6 border-y-4 border-y-(--color-brand) 
-     relative overflow-hidden
+     sticky top-0 overflow-hidden z-9999
 
      bg-[url(/assets/bg/pattern_bg.jpg)] bg-auto bg-blend-overlay bg-stone-950
 
@@ -54,7 +70,6 @@ const Header = () => {
         <HeaderBtn
           text="Home"
           link={"/"}
-          setActivePage={setActivePage}
           activePage={activePage}
           onMouseEnter={moveUnderline}
           onMouseLeave={returnToActive}
@@ -62,23 +77,20 @@ const Header = () => {
         <HeaderBtn
           text="Events"
           link={"/events"}
-          setActivePage={setActivePage}
           activePage={activePage}
           onMouseEnter={moveUnderline}
           onMouseLeave={returnToActive}
         ></HeaderBtn>
         <HeaderBtn
           text="Book Table"
-          link={"/anthon"}
-          setActivePage={setActivePage}
+          link={"/book-table"}
           activePage={activePage}
           onMouseEnter={moveUnderline}
           onMouseLeave={returnToActive}
         ></HeaderBtn>
         <HeaderBtn
           text="Contact us"
-          link={"/anthon"}
-          setActivePage={setActivePage}
+          link={"/contact"}
           activePage={activePage}
           onMouseEnter={moveUnderline}
           onMouseLeave={returnToActive}

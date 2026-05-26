@@ -81,7 +81,7 @@ const EventInfo = ({ event }) => {
           </div>
         </div>
         <div className=" mt-10 pb-30">
-          <HeroCTA text="book table"></HeroCTA>
+          <HeroCTA text="book table" link="/"></HeroCTA>
         </div>
       </div>
     </div>
