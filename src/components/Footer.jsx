@@ -5,6 +5,7 @@ import Iconbtn from "./Iconbtn";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaSnapchatGhost } from "react-icons/fa";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -64,12 +65,15 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-3">
           <p>Stay Connected With Us</p>
           <div className="flex flex-row gap-3">
-            <Iconbtn icon={FaFacebookF} link={"https://www.facebook.com/"} />
-            <Iconbtn
-              icon={FaSnapchatGhost}
-              link={"https://www.snapchat.com/"}
-            />
-            <Iconbtn icon={FaInstagram} link={"https://www.instagram.com/"} />
+            <Link href={"https://www.facebook.com/"}>
+              <Iconbtn icon={FaFacebookF} />
+            </Link>
+            <Link href={"https://www.snapchat.com/"}>
+              <Iconbtn icon={FaSnapchatGhost} />
+            </Link>
+            <Link href={"https://www.instagram.com/"}>
+              <Iconbtn icon={FaInstagram} />
+            </Link>
           </div>
         </div>
         <div className="justify-self-end">
