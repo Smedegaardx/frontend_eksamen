@@ -102,8 +102,8 @@ const Hero = () => {
           ease: [0.25, 0.46, 0.45, 0.94],
         }}
       >
-        <Herobtn text="view events" />
-        <HeroCTA text="Book table" />
+        <Herobtn text="view events" link="/events" />
+        <HeroCTA text="Book table" link="/" />
       </motion.div>
     </div>
   );

@@ -65,7 +65,7 @@ const FeaturedEvent = ({ event }) => {
           }}
           className="row-start-1 flex justify-center items-center"
         >
-          <HeroCTA text="book now"></HeroCTA>
+          <HeroCTA text="book now" link="/"></HeroCTA>
         </motion.div>
         <motion.div
           variants={{

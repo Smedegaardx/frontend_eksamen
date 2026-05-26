@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <nav
       className="grid grid-cols-2 py-6 border-y-4 border-y-(--color-brand) 
-     relative overflow-hidden
+     sticky top-0 overflow-hidden z-9999
 
      bg-[url(/assets/bg/pattern_bg.jpg)] bg-auto bg-blend-overlay bg-stone-950
 
