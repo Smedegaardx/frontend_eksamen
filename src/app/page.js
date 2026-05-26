@@ -2,6 +2,7 @@ import Header from "@/components/Header/Header";
 import Hero from "../components/index/Hero";
 import ReviewSection from "@/components/index/ReviewSection";
 import Footer from "@/components/Footer";
+import FeaturedEventsSection from "@/components/index/FeaturedEventSection";
 
 async function getTestimonials() {
   const res = await fetch("http://localhost:4000/testimonials");
@@ -13,13 +14,25 @@ async function getTestimonials() {
   return res.json();
 }
 
+async function getEvents() {
+  const res = await fetch("http://localhost:4000/events");
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch API");
+  }
+
+  return res.json();
+}
+
 export default async function Home() {
   const TestimonialsAPI = await getTestimonials();
+  const eventsAPI = await getEvents();
 
   return (
     <div>
       <Hero />
       <Header></Header>
+      <FeaturedEventsSection events={eventsAPI}></FeaturedEventsSection>
       <ReviewSection reviews={TestimonialsAPI}></ReviewSection>
       <Footer></Footer>
     </div>
