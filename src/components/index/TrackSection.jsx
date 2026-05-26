@@ -24,11 +24,24 @@ const tracks = [
 ];
 
 const TrackSection = () => {
+  const audioRef = useRef(null);
+  const [currentTrack, setCurrentTrack] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const track = tracks[currentTrack];
+
   return (
     <section className="bg-black pt-10">
       <Sectionheader title="night club track"></Sectionheader>
-      <CurrentTrack></CurrentTrack>
-      <TrackSelector></TrackSelector>
+      <CurrentTrack
+        tracks={tracks}
+        track={track}
+        currentTrack={currentTrack}
+        setCurrentTrack={setCurrentTrack}
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
+        audioRef={audioRef}
+      ></CurrentTrack>
     </section>
   );
 };
