@@ -1,8 +1,41 @@
+import { motion } from "framer-motion";
+
 const Button = ({ buttonText }) => {
   return (
-    <button className="px-auto w-45 pb-5 pt-5 border-t-3 border-b-3 cursor-pointer uppercase text-lg">
-      {buttonText}
-    </button>
+    <motion.button
+      initial="rest"
+      whileHover="hover"
+      className="relative w-45 pb-5 pt-5 cursor-pointer uppercase text-lg"
+    >
+      <motion.div
+        variants={{
+          rest: { scaleX: 0 },
+          hover: { scaleX: 1 },
+        }}
+        transition={{ duration: 0.35, ease: "easeInOut" }}
+        className="absolute top-0 left-0 h-0.75 w-full bg-[#e14487] origin-right z-2"
+      />
+      <motion.div
+        variants={{
+          rest: { scaleX: 0 },
+          hover: { scaleX: 1 },
+        }}
+        transition={{ duration: 0.35, ease: "easeInOut" }}
+        className="absolute bottom-0 left-0 h-0.75 w-full bg-[#e14487] origin-left z-2"
+      />
+
+      <div className="absolute top-0 left-0 h-0.75 w-full bg-white" />
+      <div className="absolute bottom-0 left-0 h-0.75 w-full bg-white" />
+      <motion.p
+        variants={{
+          rest: { color: "#FFF" },
+          hover: { color: "#e14487" },
+        }}
+        transition={{ duration: 0.35, ease: "easeInOut" }}
+      >
+        {buttonText}
+      </motion.p>
+    </motion.button>
   );
 };
 
