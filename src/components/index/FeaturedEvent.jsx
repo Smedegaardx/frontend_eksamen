@@ -37,7 +37,11 @@ const FeaturedEvent = ({ event }) => {
           },
         }}
         transition={{ duration: 0.3 }}
-        className={` col-start-1 row-start-1 relative grid grid-rows-2 h-[${event.asset.height}px] w-[${event.asset.width}px] bg-black/70
+        style={{
+          width: event.asset.width,
+          height: event.asset.height,
+        }}
+        className={` col-start-1 row-start-1 relative grid grid-rows-2 bg-black/70
         
 
         before:content-[''] before:absolute before:top-0 before:left-0
