@@ -1,21 +1,7 @@
-import ReviewSection from "@/components/index/ReviewSection";
-import Hero from "../../components/index/Hero";
-import Header from "@/components/Header/Header";
-import Comments from "@/components/EventPage/Comments";
-import EventSimple from "@/components/EventsList/EventSimple";
+import FeaturedEventsSection from "@/components/index/FeaturedEventSection";
 
-async function getTestimonials() {
-  const res = await fetch("http://localhost:4000/testimonials");
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch API");
-  }
-
-  return res.json();
-}
-
-async function getComments() {
-  const res = await fetch("http://localhost:4000/comments?eventId=4");
+async function getEvents() {
+  const res = await fetch("http://localhost:4000/events");
 
   if (!res.ok) {
     throw new Error("Failed to fetch API");
@@ -25,16 +11,11 @@ async function getComments() {
 }
 
 export default async function Home() {
-  const TestimonialsAPI = await getTestimonials();
-  const CommentsAPI = await getComments();
+  const eventsAPI = await getEvents();
 
   return (
     <div>
-      <Hero />
-      <Header></Header>
-      <ReviewSection API={TestimonialsAPI}></ReviewSection>
-      <Comments API={CommentsAPI}></Comments>
-      <EventSimple></EventSimple>
+      <FeaturedEventsSection events={eventsAPI}></FeaturedEventsSection>
     </div>
   );
 }
