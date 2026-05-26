@@ -61,7 +61,7 @@ const CurrentTrack = ({
   };
 
   return (
-    <div className="max-w-400 mx-auto">
+    <div className="max-w-375 mx-auto">
       <audio
         ref={audioRef}
         src={track.src}
@@ -75,8 +75,8 @@ const CurrentTrack = ({
       <div className="flex gap-8">
         <Image
           src={track.cover}
-          height={300}
-          width={300}
+          height={400}
+          width={400}
           alt={`Cover for the song ${track.title}`}
         ></Image>
         <div className="w-full flex flex-col justify-evenly">
