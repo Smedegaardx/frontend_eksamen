@@ -1,6 +1,11 @@
 import Image from "next/image";
 import FooterParagraph from "./FooterParagraph";
 import FooterContent from "./FooterContent";
+import Iconbtn from "./Iconbtn";
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaSnapchatGhost } from "react-icons/fa";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -56,35 +61,23 @@ const Footer = () => {
         </div>
       </section>
       <section className="grid grid-cols-3">
-        <p>Night Club - All Rights Reserved</p>
+        <p className="text-neutral-500">Night Club - All Rights Reserved</p>
         <div className="flex flex-col items-center gap-3">
-          <p>Stay Connected</p>
+          <p>Stay Connected With Us</p>
           <div className="flex flex-row gap-3">
-            <FooterContent
-              date=""
-              paragraph=""
-              img="/assets/icon/x.svg"
-              width={48}
-              height={48}
-            />
-            <FooterContent
-              date=""
-              paragraph=""
-              img="/assets/icon/x.svg"
-              width={48}
-              height={48}
-            />
-            <FooterContent
-              date=""
-              paragraph=""
-              img="/assets/icon/x.svg"
-              width={48}
-              height={48}
-            />
+            <Link href={"https://www.facebook.com/"}>
+              <Iconbtn icon={FaFacebookF} />
+            </Link>
+            <Link href={"https://www.snapchat.com/"}>
+              <Iconbtn icon={FaSnapchatGhost} />
+            </Link>
+            <Link href={"https://www.instagram.com/"}>
+              <Iconbtn icon={FaInstagram} />
+            </Link>
           </div>
         </div>
-        <div>
-          <p>Copyright © NightClub</p>
+        <div className="justify-self-end">
+          <p className="text-neutral-500">Copyright © NightClub</p>
         </div>
       </section>
     </footer>

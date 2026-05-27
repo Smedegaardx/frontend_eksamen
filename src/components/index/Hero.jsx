@@ -19,7 +19,7 @@ const Hero = () => {
 
   return (
     <div
-      className=" bg-cover bg-center max-w-[1920px] h-[777px] bg-blend-overlay bg-stone-800 flex flex-col justify-center items-center"
+      className=" bg-cover bg-center max-w-480 h-195 bg-blend-overlay bg-stone-800 flex flex-col justify-center items-center"
       style={{
         backgroundImage: `url(${bg})`,
       }}
@@ -102,8 +102,8 @@ const Hero = () => {
           ease: [0.25, 0.46, 0.45, 0.94],
         }}
       >
-        <Herobtn text="view events" />
-        <HeroCTA text="Book table" />
+        <Herobtn text="view events" link="/events" />
+        <HeroCTA text="Book table" link="/" />
       </motion.div>
     </div>
   );

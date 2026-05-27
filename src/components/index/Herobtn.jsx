@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-const Herobtn = ({ text }) => {
+const Herobtn = ({ text, link }) => {
   return (
-    <Link href="/">
+    <Link href={link}>
       <button className="h-16 w-42 border-3 border-neutral-400 cursor-pointer">
         <div
           className="h-full w-full flex justify-center items-center

@@ -6,13 +6,15 @@ import ReviewParagraph from "./ReviewParagraph";
 
 import CurrentReview from "./CurrentReview";
 
-const ReviewSection = ({ API }) => {
+const ReviewSection = ({ reviews }) => {
   const [activeReview, setActiveReview] = useState(1);
-  console.log(API);
 
   return (
     <section className="flex flex-col items-center bg-[url(/assets/bg/footerbg.jpg)] bg-cover bg-center bg-blend-overlay bg-stone-950 py-20">
-      <ReviewParagraph API={API} activeReview={activeReview}></ReviewParagraph>
+      <ReviewParagraph
+        reviews={reviews}
+        activeReview={activeReview}
+      ></ReviewParagraph>
 
       <CurrentReview
         activeReview={activeReview}

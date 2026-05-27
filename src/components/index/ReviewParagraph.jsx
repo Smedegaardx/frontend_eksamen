@@ -5,10 +5,8 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaSnapchatGhost } from "react-icons/fa";
 
-const ReviewParagraph = ({ API, activeReview }) => {
-  let currentReview = API.find((review) => review.id == activeReview);
-  console.log(API);
-  console.log(currentReview);
+const ReviewParagraph = ({ reviews, activeReview }) => {
+  let currentReview = reviews.find((review) => review.id == activeReview);
 
   return (
     <div className="flex flex-col items-center">

@@ -1,10 +1,8 @@
-import Link from "next/link";
-
-const Iconbtn = ({ icon: Icon, link }) => {
+const Iconbtn = ({ icon: Icon }) => {
   return (
-    <Link className="p-2 border" href={link}>
+    <div className="p-2 border">
       <Icon />
-    </Link>
+    </div>
   );
 };
 
