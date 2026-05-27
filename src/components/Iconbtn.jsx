@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const Iconbtn = ({ icon: Icon }) => {
   return (
     <div className="p-2 border">

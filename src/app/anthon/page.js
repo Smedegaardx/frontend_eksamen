@@ -1,9 +1,9 @@
-import TrackSection from "@/components/index/TrackSection";
+import VideoSection from "@/components/index/VideoSection";
 
 export default async function Home() {
   return (
     <div>
-      <TrackSection></TrackSection>
+      <VideoSection></VideoSection>
     </div>
   );
 }
