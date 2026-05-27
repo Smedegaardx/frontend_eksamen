@@ -1,3 +1,5 @@
+"use client";
+
 import Sectionheader from "./Sectionheader";
 import { motion } from "framer-motion";
 
