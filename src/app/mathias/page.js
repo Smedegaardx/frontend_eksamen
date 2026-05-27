@@ -3,6 +3,7 @@ import Button from "@/components/Button";
 import Siteheader from "@/components/Siteheader";
 import Welcome from "@/components/index/Welcome";
 import Sectionheader from "@/components/index/Sectionheader";
+import Newsletter from "@/components/index/Newsletter";
 import GallerySection from "@/components/index/GallerySection";
 
 async function getGallery() {
@@ -19,6 +20,8 @@ export default function Home() {
   const GalleryAPI = getGallery();
   return (
     <div>
+      <Newsletter />
+      <Footer />
       <Welcome></Welcome>
       <Welcome></Welcome>
       <Welcome></Welcome>
