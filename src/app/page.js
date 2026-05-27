@@ -4,6 +4,7 @@ import ReviewSection from "@/components/index/ReviewSection";
 import Footer from "@/components/Footer";
 import FeaturedEventsSection from "@/components/index/FeaturedEventSection";
 import TrackSection from "@/components/index/TrackSection";
+import VideoSection from "@/components/index/VideoSection";
 
 async function getTestimonials() {
   const res = await fetch("http://localhost:4000/testimonials");
@@ -35,6 +36,7 @@ export default async function Home() {
       <Header></Header>
       <FeaturedEventsSection events={eventsAPI}></FeaturedEventsSection>
       <TrackSection></TrackSection>
+      <VideoSection></VideoSection>
       <ReviewSection reviews={TestimonialsAPI}></ReviewSection>
       <Footer></Footer>
     </div>
