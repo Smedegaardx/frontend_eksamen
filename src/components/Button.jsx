@@ -14,7 +14,7 @@ const Button = ({ buttonText }) => {
           hover: { scaleX: 1 },
         }}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="absolute top-0 left-0 h-0.75 w-full bg-[#e14487] origin-right z-2"
+        className="absolute top-0 left-0 h-0.75 w-full bg-brand origin-right z-2"
       />
       <motion.div
         variants={{
@@ -22,15 +22,15 @@ const Button = ({ buttonText }) => {
           hover: { scaleX: 1 },
         }}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="absolute bottom-0 left-0 h-0.75 w-full bg-[#e14487] origin-left z-2"
+        className="absolute bottom-0 left-0 h-0.75 w-full bg-brand origin-left z-2"
       />
 
       <div className="absolute top-0 left-0 h-0.75 w-full bg-white" />
       <div className="absolute bottom-0 left-0 h-0.75 w-full bg-white" />
       <motion.p
         variants={{
-          rest: { color: "#FFF" },
-          hover: { color: "#e14487" },
+          rest: { color: "oklch(1 0 0)" },
+          hover: { color: "oklch(0.6535 0.2419 9.27)" },
         }}
         transition={{ duration: 0.35, ease: "easeInOut" }}
       >
