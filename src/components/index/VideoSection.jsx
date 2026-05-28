@@ -148,7 +148,7 @@ const VideoSection = () => {
             delay: 0.4,
           }}
         >
-          <motion.div
+          <motion.button
             className="text-2xl cursor-pointer"
             whileHover={{ scale: 1.15, x: -3 }}
             whileTap={{ scale: 0.9 }}
@@ -162,9 +162,9 @@ const VideoSection = () => {
             }
           >
             <Iconbtn icon={GoTriangleLeft} />
-          </motion.div>
+          </motion.button>
 
-          <motion.div
+          <motion.button
             className="text-2xl cursor-pointer"
             whileHover={{ scale: 1.15, x: 3 }}
             whileTap={{ scale: 0.9 }}
@@ -178,7 +178,7 @@ const VideoSection = () => {
             }
           >
             <Iconbtn icon={GoTriangleRight} />
-          </motion.div>
+          </motion.button>
         </motion.div>
       </motion.div>
     </section>

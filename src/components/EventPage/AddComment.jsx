@@ -81,9 +81,9 @@ const AddComment = ({
             placeholder="Your Comment"
           />
 
-          <div className="self-end">
+          <button className="self-end">
             <Button buttonText="submit" />
-          </div>
+          </button>
         </form>
       </div>
     </div>

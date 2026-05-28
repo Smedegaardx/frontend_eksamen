@@ -11,6 +11,7 @@ const Herobtn = ({ text, link }) => {
         initial="rest"
       >
         <motion.button
+          tabIndex={-1}
           className="h-16 w-36 md:w-42 border-3 border-neutral-400 cursor-pointer"
           variants={{
             rest: {
