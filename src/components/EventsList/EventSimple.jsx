@@ -10,10 +10,18 @@ const EventSimple = ({ event, imagelast }) => {
         `}
       >
         <Image
+          src={`http://localhost:4000/${event.asset.url}`}
+          width={event.asset.width}
+          height={event.asset.height}
+          alt={event.asset.alt}
+          className="block md:hidden"
+        />
+        <Image
           src={`http://localhost:4000/${event.heroAsset.url}`}
           width={event.heroAsset.width}
           height={event.heroAsset.height}
           alt={event.heroAsset.alt}
+          className="hidden md:block"
         />
       </div>
 
