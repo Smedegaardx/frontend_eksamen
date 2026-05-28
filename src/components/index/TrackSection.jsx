@@ -1,6 +1,10 @@
 "use client";
 
-import { useRef, useState } from "react";
+import {
+  useRef,
+  useState,
+  useEffect,
+} from "react";
 import CurrentTrack from "./CurrentTrack";
 import Sectionheader from "./Sectionheader";
 import TrackSelector from "./TrackSelector";
@@ -25,11 +29,19 @@ const tracks = [
 
 const TrackSection = () => {
   const audioRef = useRef(null);
-  const [currentTrack, setCurrentTrack] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTrack, setCurrentTrack] =
+    useState(0);
+  const [isPlaying, setIsPlaying] =
+    useState(false);
   const [shownTrack, setShownTrack] = useState(0);
 
   const track = tracks[currentTrack];
+
+  useEffect(() => {
+    if (isPlaying && audioRef.current) {
+      audioRef.current.play();
+    }
+  }, [currentTrack]);
 
   return (
     <section className="bg-black pt-10 pb-20">
