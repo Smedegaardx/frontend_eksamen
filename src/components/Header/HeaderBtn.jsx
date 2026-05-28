@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LettersPullUp as FlippingText } from "./FlippingText";
+import FlippingText from "./FlippingText";
 
 const HeaderBtn = ({
   setActivePage,

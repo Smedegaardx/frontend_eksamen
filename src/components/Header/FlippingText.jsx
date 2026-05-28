@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export function LettersPullUp({ text, className = "", data }) {
+const FlippingText = ({ text, className = "", data }) => {
   const splittedText = text.split("");
 
   const pullupVariant = {
@@ -65,4 +65,6 @@ export function LettersPullUp({ text, className = "", data }) {
       ))}
     </motion.div>
   );
-}
+};
+
+export default FlippingText;
