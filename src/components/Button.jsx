@@ -34,6 +34,7 @@ const Button = ({ buttonText }) => {
       <div className="absolute top-0 left-0 h-0.75 w-full bg-white" />
       <div className="absolute bottom-0 left-0 h-0.75 w-full bg-white" />
       <motion.p
+        className="text-center"
         variants={{
           rest: { color: "#FFF" },
           hover: { color: "#e14487" },
