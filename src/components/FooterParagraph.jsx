@@ -5,7 +5,7 @@ const FooterParagraph = ({
 }) => {
   return (
     <div className="uppercase text-center lg:text-left mt-6 lg:mt-0">
-      <h2 className="text-[#FF2A70] mb-1">
+      <h2 className="text-(--color-brand) mb-1">
         {title}
       </h2>
       <p>{firstLine}</p>

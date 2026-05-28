@@ -6,6 +6,7 @@ import FeaturedEventsSection from "@/components/index/FeaturedEventSection";
 import TrackSection from "@/components/index/TrackSection";
 import VideoSection from "@/components/index/VideoSection";
 import Welcome from "@/components/index/Welcome";
+import Newsletter from "@/components/index/Newsletter";
 import GallerySection from "@/components/index/GallerySection";
 
 async function getTestimonials() {
@@ -50,6 +51,7 @@ export default async function Home() {
       <ReviewSection
         reviews={TestimonialsAPI}
       ></ReviewSection>
+      <Newsletter></Newsletter>
       <Footer></Footer>
     </div>
   );
