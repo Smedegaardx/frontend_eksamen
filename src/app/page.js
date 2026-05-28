@@ -5,9 +5,12 @@ import Footer from "@/components/Footer";
 import FeaturedEventsSection from "@/components/index/FeaturedEventSection";
 import TrackSection from "@/components/index/TrackSection";
 import VideoSection from "@/components/index/VideoSection";
+import Welcome from "@/components/index/Welcome";
 
 async function getTestimonials() {
-  const res = await fetch("http://localhost:4000/testimonials");
+  const res = await fetch(
+    "http://localhost:4000/testimonials",
+  );
 
   if (!res.ok) {
     throw new Error("Failed to fetch API");
@@ -17,7 +20,9 @@ async function getTestimonials() {
 }
 
 async function getEvents() {
-  const res = await fetch("http://localhost:4000/events");
+  const res = await fetch(
+    "http://localhost:4000/events",
+  );
 
   if (!res.ok) {
     throw new Error("Failed to fetch API");
@@ -34,10 +39,15 @@ export default async function Home() {
     <div>
       <Hero />
       <Header></Header>
-      <FeaturedEventsSection events={eventsAPI}></FeaturedEventsSection>
+      <Welcome></Welcome>
+      <FeaturedEventsSection
+        events={eventsAPI}
+      ></FeaturedEventsSection>
       <TrackSection></TrackSection>
       <VideoSection></VideoSection>
-      <ReviewSection reviews={TestimonialsAPI}></ReviewSection>
+      <ReviewSection
+        reviews={TestimonialsAPI}
+      ></ReviewSection>
       <Footer></Footer>
     </div>
   );

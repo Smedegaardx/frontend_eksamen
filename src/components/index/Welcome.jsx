@@ -32,7 +32,7 @@ const services = [
 
 const Welcome = () => {
   return (
-    <section className="bg-[url(/assets/bg/pattern_bg.jpg)] bg-cover bg-center py-20">
+    <section className="bg-[url(/assets/bg/pattern_bg.jpg)] bg-cover bg-center py-20 overflow-hidden">
       <Sectionheader title="Welcome in nightclub" />
       <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-5 lg:mx-auto">
         {services.map((service, i) => (
@@ -48,8 +48,6 @@ const Welcome = () => {
               alt={service.title}
               className="w-full h-full object-cover col-start-1 row-start-1"
             />
-
-            {/* Sort */}
             <motion.div
               className="col-start-1 row-start-1 w-full h-full bg-black flex flex-col items-center justify-center 
               
@@ -75,7 +73,6 @@ const Welcome = () => {
                 },
               }}
             >
-              {/* Ikon */}
               <motion.div
                 className="w-24 h-24 border-2 border-(--color-brand) flex items-center justify-center mb-4 text-2xl text-(--color-brand) rounded"
                 variants={{
@@ -127,8 +124,6 @@ const Welcome = () => {
                   </motion.div>
                 )}
               </motion.div>
-
-              {/* Title */}
               <motion.h3
                 className="text-white text-lg font-bold tracking-widest uppercase mb-6"
                 variants={{
@@ -148,8 +143,6 @@ const Welcome = () => {
               >
                 {service.title}
               </motion.h3>
-
-              {/* Description */}
               <motion.p
                 className="text-gray-300 text-md text-center leading-relaxed"
                 variants={{
