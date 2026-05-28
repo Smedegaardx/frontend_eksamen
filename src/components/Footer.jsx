@@ -9,8 +9,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-[image:linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)),url(/assets/bg/footerbg.jpg)] bg-cover bg-center px-20 py-10">
-      <section className="grid grid-cols-3 mb-16">
+    <footer className="bg-[image:linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)),url(/assets/bg/footerbg.jpg)] bg-cover bg-center px-5 md:px-20 py-10">
+      <section className="flex flex-col items-center md:items-start md:grid lg:grid-cols-3 mb-16 gap-2 ">
         <div className="flex flex-col gap-6">
           <Image
             src="/assets/icon/Logo_main.svg"
@@ -30,7 +30,9 @@ const Footer = () => {
           />
         </div>
         <div className="flex flex-col gap-6">
-          <h2 className="text-[#FF2A70] uppercase">News</h2>
+          <h2 className="text-[#FF2A70] uppercase text-center md:text-left mt-6 lg:mt-0">
+            News
+          </h2>
           <FooterContent
             date="April 17, 2026"
             paragraph="Lorem Ipsum is simply dummy text of the printing and typesetting."
@@ -42,8 +44,10 @@ const Footer = () => {
             img="/assets/content-img/recent_post2.jpg"
           />
         </div>
-        <div className="flex flex-col gap-6">
-          <h2 className="text-[#FF2A70] uppercase">Recent posts</h2>
+        <div className="flex flex-col gap-6 mt-5 lg:mt-0">
+          <h2 className="text-[#FF2A70] uppercase text-center md:text-left mt-6 lg:mt-0">
+            Recent posts
+          </h2>
           <FooterContent
             date="5 hours ago"
             paragraph="It is a long established fact that a reader will be distracted by the readable..."
@@ -60,9 +64,11 @@ const Footer = () => {
           />
         </div>
       </section>
-      <section className="grid grid-cols-3">
-        <p className="text-neutral-500">Night Club - All Rights Reserved</p>
-        <div className="flex flex-col items-center gap-3">
+      <section className="grid md:grid-cols-3 gap-5">
+        <p className="text-neutral-500 text-center md:text-left order-2 md:order-1">
+          Night Club - All Rights Reserved
+        </p>
+        <div className="flex flex-col items-center gap-3 order-1 md:order-2">
           <p>Stay Connected With Us</p>
           <div className="flex flex-row gap-3">
             <Link href={"https://www.facebook.com/"}>
@@ -76,8 +82,10 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className="justify-self-end">
-          <p className="text-neutral-500">Copyright © NightClub</p>
+        <div className="md:justify-self-end order-3">
+          <p className="text-neutral-500 text-center md:text-right">
+            Copyright © NightClub
+          </p>
         </div>
       </section>
     </footer>
