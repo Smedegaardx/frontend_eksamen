@@ -107,7 +107,7 @@ const ContactForm = () => {
             )}
             {success && (
               <p className="text-green-400 text-sm self-start">
-                Tak! Din besked er blevet sendt.
+                Your message has been sent.
               </p>
             )}
           </div>
