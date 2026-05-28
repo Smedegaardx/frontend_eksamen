@@ -49,7 +49,6 @@ const TrackSection = () => {
       <CurrentTrack
         tracks={tracks}
         track={track}
-        currentTrack={currentTrack}
         setCurrentTrack={setCurrentTrack}
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}

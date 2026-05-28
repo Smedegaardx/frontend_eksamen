@@ -14,7 +14,6 @@ import {
 const CurrentTrack = ({
   tracks,
   track,
-  currentTrack,
   setCurrentTrack,
   audioRef,
   isPlaying,
@@ -60,20 +59,24 @@ const CurrentTrack = ({
     }
   };
 
+  const [volume, setVolume] = useState(1);
+  const [previousVolume, setPreviousVolume] =
+    useState(1);
+
   const muteUnmute = () => {
     if (audioRef.current.volume > 0) {
+      setPreviousVolume(audioRef.current.volume);
       audioRef.current.volume = 0;
       setVolume(0);
-    } else if (audioRef.current.volume == 0) {
-      audioRef.current.volume = 0.25;
-      setVolume(0.25);
+    } else {
+      audioRef.current.volume = previousVolume;
+      setVolume(previousVolume);
     }
   };
 
   const [currentTime, setCurrentTime] =
     useState(0);
   const [duration, setDuration] = useState(0);
-  const [volume, setVolume] = useState(1);
 
   const formatTime = (time) => {
     if (!time) return "00:00";
