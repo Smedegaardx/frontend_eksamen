@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 import HeaderLogo from "./HeaderLogo";
 import HeaderBtn from "./HeaderBtn";
 import MobileHeaderBtn from "./MobileHeaderBtn";
@@ -104,17 +103,17 @@ const Header = () => {
           onMouseEnter={moveUnderline}
           onMouseLeave={returnToActive}
         ></HeaderBtn>
-        <Image
+        <img
           src="/assets/bottom_line2.png"
           width={100}
-          height={0}
+          height={100}
           alt="Pink line"
           className="absolute bottom-6 transition-all duration-300 ease-out"
           style={{
             left: `${underline.left}px`,
             width: `${underline.width}px`,
           }}
-        ></Image>
+        ></img>
       </div>
 
       <div className="flex lg:hidden justify-end items-center mr-6 md:mr-16">
