@@ -34,12 +34,13 @@ const Welcome = () => {
   return (
     <section className="bg-[url(/assets/bg/pattern_bg.jpg)] bg-cover bg-center py-20">
       <Sectionheader title="Welcome in nightclub" />
-      <div className="grid grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-5 lg:mx-auto">
         {services.map((service, i) => (
           <motion.div
             key={i}
             className="relative aspect-3/4 grid grid-cols-1 grid-rows-1"
             initial="rest"
+            whileTap="hover"
             whileHover="hover"
           >
             <motion.img
