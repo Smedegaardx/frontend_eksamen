@@ -19,13 +19,17 @@ const FeaturedEvent = ({ event }) => {
     });
 
   return (
-    <motion.div className="grid" initial="rest" whileHover="hover">
+    <motion.div
+      className="relative grid w-full max-w-full"
+      initial="rest"
+      whileHover="hover"
+    >
       <Image
         src={`http://localhost:4000/${event.asset.url}`}
         height={event.asset.height}
         width={event.asset.width}
         alt={event.asset.alt}
-        className="col-start-1 row-start-1"
+        className="col-start-1 row-start-1 w-full h-auto"
       ></Image>
       <motion.div
         variants={{
@@ -37,11 +41,7 @@ const FeaturedEvent = ({ event }) => {
           },
         }}
         transition={{ duration: 0.3 }}
-        style={{
-          width: event.asset.width,
-          height: event.asset.height,
-        }}
-        className={` col-start-1 row-start-1 relative grid grid-rows-2 bg-black/70
+        className={` col-start-1 row-start-1 relative grid grid-rows-1 bg-black/70
         
 
         before:content-[''] before:absolute before:top-0 before:left-0
@@ -86,7 +86,7 @@ const FeaturedEvent = ({ event }) => {
             duration: 0.35,
             ease: "easeOut",
           }}
-          className="bg-black/70 row-start-2 py-3 px-2 flex flex-col"
+          className="bg-black/70 row-start-2 py-3 px-2 flex flex-col w-full h-full"
         >
           <h1 className="text-2xl uppercase">{event.title}</h1>
           <p className="text-lg leading-7 text-gray-400 mt-2">
@@ -95,9 +95,15 @@ const FeaturedEvent = ({ event }) => {
           <p className="text-(--color-brand) mt-auto">{event.location}</p>
         </motion.div>
       </motion.div>
-      <div className="bg-(--color-brand) col-start-1 row-start-2 self-end px-4 py-2 flex justify-between z-10">
-        <h1 className="text-xl">{event.title}</h1>
-        <p className="text-xl">{formattedDate}</p>
+      <div className="bg-(--color-brand) col-start-1 row-start-1 md:row-start-2 self-end px-4 py-2 z-10">
+        <div className="flex justify-between md:hidden">
+          <h1 className="text-xl">{formattedDate}</h1>
+          <p className="text-xl">{event.location}</p>
+        </div>
+        <div className="justify-between hidden md:flex">
+          <h1 className="text-xl">{event.title}</h1>
+          <p className="text-xl">{formattedDate}</p>
+        </div>
       </div>
     </motion.div>
   );

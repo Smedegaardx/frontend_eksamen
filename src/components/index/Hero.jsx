@@ -19,7 +19,7 @@ const Hero = () => {
 
   return (
     <div
-      className=" bg-cover bg-center max-w-480 h-195 bg-blend-overlay bg-stone-800 flex flex-col justify-center items-center"
+      className="w-full bg-cover bg-center h-195 bg-blend-overlay bg-stone-800 flex flex-col justify-center items-center"
       style={{
         backgroundImage: `url(${bg})`,
       }}
@@ -47,7 +47,7 @@ const Hero = () => {
         ></Image>
       </motion.div>
       <motion.h1
-        className="tracking-[1.55rem] left-2.5 relative text-3xl uppercase mt-3"
+        className="tracking-wider md:tracking-[1.55rem] left-2.5 relative text-3xl uppercase mt-3 text-center"
         initial={{
           y: -50,
           opacity: 0,

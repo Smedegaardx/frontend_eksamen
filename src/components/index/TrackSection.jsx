@@ -27,6 +27,7 @@ const TrackSection = () => {
   const audioRef = useRef(null);
   const [currentTrack, setCurrentTrack] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [shownTrack, setShownTrack] = useState(0);
 
   const track = tracks[currentTrack];
 
@@ -44,8 +45,11 @@ const TrackSection = () => {
       ></CurrentTrack>
       <TrackSelector
         tracks={tracks}
+        currentTrack={currentTrack}
         setCurrentTrack={setCurrentTrack}
         setIsPlaying={setIsPlaying}
+        shownTrack={shownTrack}
+        setShownTrack={setShownTrack}
         audioRef={audioRef}
       ></TrackSelector>
     </section>

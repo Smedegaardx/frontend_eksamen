@@ -17,7 +17,7 @@ const ReviewParagraph = ({ reviews, activeReview }) => {
         width={currentReview.asset.width}
       ></Image>
       <h2 className="text-xl mt-10">{currentReview.name}</h2>
-      <p className="text-lg max-w-200 text-center mt-5">
+      <p className="text-baseh md:text-lg max-w-200 text-center mt-5 text-pretty mx-4">
         {currentReview.content}
       </p>
       <div className="flex gap-5 my-10">

@@ -15,7 +15,7 @@ const HeroCTA = ({ text, link }) => {
           background:
             "linear-gradient(300deg, #b822b5 0%, #b822b5 99%, #F72A78 100%)",
         }}
-        className="h-16 w-42 cursor-pointer"
+        className="h-16 w-36 md:w-42 cursor-pointer"
       >
         <motion.div
           initial={{
@@ -40,7 +40,7 @@ const HeroCTA = ({ text, link }) => {
             className="h-full w-full flex justify-center items-center
         "
           >
-            <p className="text-lg uppercase tracking-wide">{text}</p>
+            <p className="md:text-lg uppercase tracking-wide">{text}</p>
           </motion.div>
         </motion.div>
       </motion.button>
