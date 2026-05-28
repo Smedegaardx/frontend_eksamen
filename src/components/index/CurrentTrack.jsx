@@ -61,7 +61,7 @@ const CurrentTrack = ({
   };
 
   return (
-    <div className="max-w-375 mx-auto">
+    <div className="max-w-375 mx-8 lg:mx-16 2xl:mx-auto">
       <audio
         ref={audioRef}
         src={track.src}
@@ -78,9 +78,12 @@ const CurrentTrack = ({
           height={400}
           width={400}
           alt={`Cover for the song ${track.title}`}
+          className="hidden md:block"
         ></Image>
         <div className="w-full flex flex-col justify-evenly">
-          <h2 className="uppercase text-2xl font-bold">{track.title}</h2>
+          <h2 className="uppercase text-2xl font-bold mb-5 text-center lg:text-left">
+            {track.title}
+          </h2>
 
           <input
             type="range"
@@ -94,7 +97,7 @@ const CurrentTrack = ({
             className="w-full accent-(--color-brand)"
           />
 
-          <div className="mt-4 flex items-center justify-between gap-5">
+          <div className="mt-4 flex flex-col lg:flex-row items-center justify-between gap-5">
             <h1>
               {formatTime(currentTime)} / {formatTime(duration)}
             </h1>
