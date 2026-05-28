@@ -30,7 +30,7 @@ const Footer = () => {
           />
         </div>
         <div className="hidden lg:flex flex-col gap-6">
-          <h2 className="text-[#FF2A70] uppercase text-center md:text-left mt-6 lg:mt-0">
+          <h2 className="text-(--color-brand) uppercase text-center md:text-left mt-6 lg:mt-0">
             News
           </h2>
           <FooterContent
@@ -45,7 +45,7 @@ const Footer = () => {
           />
         </div>
         <div className="hidden lg:flex flex-col gap-6 mt-5 lg:mt-0">
-          <h2 className="text-[#FF2A70] uppercase text-center md:text-left mt-6 lg:mt-0">
+          <h2 className="text-(--color-brand) uppercase text-center md:text-left mt-6 lg:mt-0">
             Recent posts
           </h2>
           <FooterContent
