@@ -15,8 +15,10 @@ const Header = () => {
   const getActivePage = () => {
     if (pathname === "/") return "Home";
     if (pathname === "/events") return "Events";
-    if (pathname === "/book-table") return "Book Table";
-    if (pathname === "/contact") return "Contact us";
+    if (pathname === "/book-table")
+      return "Book Table";
+    if (pathname === "/contact")
+      return "Contact us";
     return "Home";
   };
 
@@ -37,7 +39,9 @@ const Header = () => {
   };
 
   const returnToActive = () => {
-    const activeButton = document.querySelector(`[data-page="${activePage}"]`);
+    const activeButton = document.querySelector(
+      `[data-page="${activePage}"]`,
+    );
 
     if (!activeButton) return;
 
@@ -54,7 +58,7 @@ const Header = () => {
   return (
     <nav
       className="flex gap-10 justify-between lg:justify-around py-6 border-y-4 border-y-(--color-brand) 
-     sticky top-0 overflow-hidden z-9999
+     sticky top-0 overflow-hidden z-5000
 
      bg-[url(/assets/bg/pattern_bg.jpg)] bg-auto bg-blend-overlay bg-stone-950
 
@@ -136,7 +140,11 @@ const Header = () => {
           >
             <IoCloseSharp />
           </button>
-          <MobileHeaderBtn text="Home" link="/" activePage={activePage} />
+          <MobileHeaderBtn
+            text="Home"
+            link="/"
+            activePage={activePage}
+          />
           <MobileHeaderBtn
             text="Events"
             link="/events"
