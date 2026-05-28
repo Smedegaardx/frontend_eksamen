@@ -7,6 +7,7 @@ const HeroCTA = ({ text, link }) => {
   return (
     <Link href={link}>
       <motion.button
+        tabIndex={-1}
         initial={{
           background:
             "linear-gradient(300deg, #b822b5 0%, #b822b5 50%, #F72A78 100%)",
@@ -40,7 +41,9 @@ const HeroCTA = ({ text, link }) => {
             className="h-full w-full flex justify-center items-center
         "
           >
-            <p className="md:text-lg uppercase tracking-wide">{text}</p>
+            <p className="md:text-lg uppercase tracking-wide">
+              {text}
+            </p>
           </motion.div>
         </motion.div>
       </motion.button>

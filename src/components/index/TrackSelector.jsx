@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Iconbtn from "../Iconbtn";
-import { GoTriangleRight, GoTriangleLeft } from "react-icons/go";
+import {
+  GoTriangleRight,
+  GoTriangleLeft,
+} from "react-icons/go";
 
 const TrackSelector = ({
   tracks,
@@ -11,17 +14,21 @@ const TrackSelector = ({
   setShownTrack,
 }) => {
   const previousImage = () => {
-    setShownTrack((prev) => (prev === 0 ? tracks.length - 1 : prev - 1));
+    setShownTrack((prev) =>
+      prev === 0 ? tracks.length - 1 : prev - 1,
+    );
   };
 
   const nextImage = () => {
-    setShownTrack((prev) => (prev === tracks.length - 1 ? 0 : prev + 1));
+    setShownTrack((prev) =>
+      prev === tracks.length - 1 ? 0 : prev + 1,
+    );
   };
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center gap-5 mt-5">
       {tracks.map((track, index) => (
-        <motion.div
+        <motion.button
           key={index}
           onClick={() => setCurrentTrack(index)}
           className={`
@@ -116,15 +123,21 @@ const TrackSelector = ({
           >
             <h1>{track.title}</h1>
           </motion.div>
-        </motion.div>
+        </motion.button>
       ))}
 
       <div className="flex justify-center gap-6 mt-6 md:hidden">
-        <button onClick={previousImage} className="cursor-pointer text-2xl">
+        <button
+          onClick={previousImage}
+          className="cursor-pointer text-2xl"
+        >
           <Iconbtn icon={GoTriangleLeft} />
         </button>
 
-        <button onClick={nextImage} className="cursor-pointer text-2xl">
+        <button
+          onClick={nextImage}
+          className="cursor-pointer text-2xl"
+        >
           <Iconbtn icon={GoTriangleRight} />
         </button>
       </div>
