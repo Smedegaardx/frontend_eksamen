@@ -10,7 +10,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="bg-[image:linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)),url(/assets/bg/footerbg.jpg)] bg-cover bg-center px-5 md:px-20 py-10">
-      <section className="flex flex-col items-center md:items-start md:grid lg:grid-cols-3 mb-16 gap-2 ">
+      <section className="flex flex-col items-center lg:grid lg:grid-cols-3 mb-20 gap-2 ">
         <div className="flex flex-col gap-6">
           <Image
             src="/assets/icon/Logo_main.svg"
@@ -29,7 +29,7 @@ const Footer = () => {
             secondLine="Sat - sun 11 pm to 5 am"
           />
         </div>
-        <div className="flex flex-col gap-6">
+        <div className="hidden lg:flex flex-col gap-6">
           <h2 className="text-[#FF2A70] uppercase text-center md:text-left mt-6 lg:mt-0">
             News
           </h2>
@@ -44,7 +44,7 @@ const Footer = () => {
             img="/assets/content-img/recent_post2.jpg"
           />
         </div>
-        <div className="flex flex-col gap-6 mt-5 lg:mt-0">
+        <div className="hidden lg:flex flex-col gap-6 mt-5 lg:mt-0">
           <h2 className="text-[#FF2A70] uppercase text-center md:text-left mt-6 lg:mt-0">
             Recent posts
           </h2>
@@ -65,24 +65,30 @@ const Footer = () => {
         </div>
       </section>
       <section className="grid md:grid-cols-3 gap-5">
-        <p className="text-neutral-500 text-center md:text-left order-2 md:order-1">
+        <p className="text-neutral-500 text-center self-end  md:text-left order-2 md:order-1">
           Night Club - All Rights Reserved
         </p>
         <div className="flex flex-col items-center gap-3 order-1 md:order-2">
           <p>Stay Connected With Us</p>
           <div className="flex flex-row gap-3">
-            <Link href={"https://www.facebook.com/"}>
+            <Link
+              href={"https://www.facebook.com/"}
+            >
               <Iconbtn icon={FaFacebookF} />
             </Link>
-            <Link href={"https://www.snapchat.com/"}>
+            <Link
+              href={"https://www.snapchat.com/"}
+            >
               <Iconbtn icon={FaSnapchatGhost} />
             </Link>
-            <Link href={"https://www.instagram.com/"}>
+            <Link
+              href={"https://www.instagram.com/"}
+            >
               <Iconbtn icon={FaInstagram} />
             </Link>
           </div>
         </div>
-        <div className="md:justify-self-end order-3">
+        <div className="md:justify-self-end self-end order-3">
           <p className="text-neutral-500 text-center md:text-right">
             Copyright © NightClub
           </p>
