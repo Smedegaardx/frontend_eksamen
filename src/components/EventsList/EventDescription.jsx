@@ -18,7 +18,7 @@ const EventDescription = ({ event, imagelast }) => {
 
   return (
     <div
-      className={`my-10 mx-6 max-w-175 flex flex-col justify-between ${imagelast ? "ml-auto" : ""}`}
+      className={`py-5 px-6 mx-auto xl:mx-6 max-w-175 flex flex-col h-full justify-between ${imagelast ? "xl:ml-auto" : ""}`}
     >
       <h1 className="text-2xl">{event.title}</h1>
       <h2 className="text-lg mt-2">
@@ -28,7 +28,7 @@ const EventDescription = ({ event, imagelast }) => {
       <p className="text-lg text-neutral-400 mt-6 leading-8">
         {firstParagraph}
       </p>
-      <div className="flex justify-end mt-auto ">
+      <div className="flex justify-center xl:justify-end mt-8 xl:mt-auto m-10 xl:mb-3">
         <Link href={`/events/${event.slug}`}>
           <Button buttonText="Read more"></Button>
         </Link>
