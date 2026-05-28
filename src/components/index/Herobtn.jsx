@@ -3,12 +3,12 @@ import Link from "next/link";
 const Herobtn = ({ text, link }) => {
   return (
     <Link href={link}>
-      <button className="h-16 w-42 border-3 border-neutral-400 cursor-pointer">
+      <button className="h-16 w-36 md:w-42 border-3 border-neutral-400 cursor-pointer">
         <div
           className="h-full w-full flex justify-center items-center
         "
         >
-          <p className="text-lg uppercase tracking-wide">{text}</p>
+          <p className="md:text-lg uppercase tracking-wide">{text}</p>
         </div>
       </button>
     </Link>
