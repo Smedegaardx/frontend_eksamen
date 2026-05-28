@@ -8,7 +8,7 @@ const SingleComment = ({ comment }) => {
   return (
     <div className="max-w-300 my-10">
       <h2 className="text-2xl">
-        {comment.name} &nbsp; - &nbsp;
+        {comment.name} <br className="md:hidden"></br> &nbsp; - &nbsp;
         <span className="text-(--color-brand) text-lg font-light">
           Posted {formattedDate}
         </span>

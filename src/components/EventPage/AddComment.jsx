@@ -38,8 +38,10 @@ const AddComment = ({ eventId, onCommentAdded }) => {
 
   return (
     <div className="bg-[url(/assets/bg/pattern_bg.jpg)]">
-      <div className="mx-auto max-w-400 py-10">
-        <h1 className="uppercase text-5xl font-extrabold">Leave a comment</h1>
+      <div className="mx-auto max-w-400 py-10 px-5 3xl:px-0">
+        <h1 className="uppercase text-4xl text-center md:text-left md:text-5xl font-extrabold">
+          Leave a comment
+        </h1>
 
         <form onSubmit={handleSubmit} className="flex flex-col mt-15 gap-10">
           <div className="grid grid-cols-2 gap-8">
