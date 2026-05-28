@@ -1,9 +1,9 @@
-import VideoSection from "@/components/index/VideoSection";
+import Welcome from "@/components/index/Welcome";
 
 export default async function Home() {
   return (
     <div>
-      <VideoSection></VideoSection>
+      <Welcome></Welcome>
     </div>
   );
 }
