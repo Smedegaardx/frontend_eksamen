@@ -59,7 +59,7 @@ const Header = () => {
   return (
     <nav
       className="flex gap-10 justify-between lg:justify-around py-6 border-y-4 border-y-(--color-brand) 
-     sticky top-0 overflow-hidden z-9999
+     sticky top-0 overflow-hidden z-5000
 
      bg-[url(/assets/bg/pattern_bg.jpg)] bg-auto bg-blend-overlay bg-stone-950
 

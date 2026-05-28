@@ -75,7 +75,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="flex flex-col items-center py-16 bg-[url(/assets/bg/pattern_bg.jpg)] bg-cover bg-center">
+    <section className="flex flex-col items-center py-16 bg-[url(/assets/bg/pattern_bg.jpg)] bg-cover bg-center  mx-4">
       <form
         onSubmit={handleSubmit}
         noValidate
@@ -151,7 +151,7 @@ const ContactForm = () => {
           </div>
         </div>
 
-        <button className="flex justify-end max-w-lg w-full mt-1">
+        <button className="flex justify-center md:justify-end max-w-lg w-full mt-1">
           <Button buttonText="Send" />
         </button>
       </form>
