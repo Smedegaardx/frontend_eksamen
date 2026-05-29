@@ -6,7 +6,7 @@ import Siteheader from "@/components/Siteheader";
 
 async function getEvents() {
   const res = await fetch(
-    "http://localhost:4000/events",
+    "https://night-club-api-2026-u759.onrender.com/events",
   );
 
   if (!res.ok) {

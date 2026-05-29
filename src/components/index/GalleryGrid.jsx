@@ -1,30 +1,12 @@
 "use client";
 
-import {
-  useRef,
-  useState,
-  useEffect,
-  useCallback,
-} from "react";
-import {
-  motion,
-  useInView,
-  AnimatePresence,
-} from "framer-motion";
+import { useRef, useState, useEffect, useCallback } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Iconbtn from "../Iconbtn";
-import {
-  GoTriangleRight,
-  GoTriangleLeft,
-} from "react-icons/go";
+import { GoTriangleRight, GoTriangleLeft } from "react-icons/go";
 
-function Lightbox({
-  items,
-  activeIndex,
-  onClose,
-  onNext,
-  onPrev,
-}) {
+function Lightbox({ items, activeIndex, onClose, onNext, onPrev }) {
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "Escape") onClose();
@@ -32,11 +14,7 @@ function Lightbox({
       if (e.key === "ArrowLeft") onPrev();
     };
     window.addEventListener("keydown", handleKey);
-    return () =>
-      window.removeEventListener(
-        "keydown",
-        handleKey,
-      );
+    return () => window.removeEventListener("keydown", handleKey);
   }, [onClose, onNext, onPrev]);
 
   const item = items[activeIndex];
@@ -92,7 +70,7 @@ function Lightbox({
           onClick={(e) => e.stopPropagation()}
         >
           <Image
-            src={`http://localhost:4000${item.asset.url}`}
+            src={`https://night-club-api-2026-u759.onrender.com/${item.asset.url}`}
             alt={item.asset.alt}
             width={item.asset.width}
             height={item.asset.height ?? 800}
@@ -146,12 +124,7 @@ function Lightbox({
   );
 }
 
-function AnimatedGalleryItem({
-  item,
-  index,
-  style,
-  onClick,
-}) {
+function AnimatedGalleryItem({ item, index, style, onClick }) {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
@@ -164,11 +137,7 @@ function AnimatedGalleryItem({
       style={style}
       className="relative overflow-hidden cursor-pointer"
       initial="rest"
-      animate={
-        isInView
-          ? { opacity: 1, x: 0 }
-          : { opacity: 0, x: -64 }
-      }
+      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -64 }}
       whileHover="hover"
       transition={{
         duration: 0.6,
@@ -208,7 +177,7 @@ function AnimatedGalleryItem({
       />
 
       <Image
-        src={`http://localhost:4000${item.asset.url}`}
+        src={`https://night-club-api-2026-u759.onrender.com/${item.asset.url}`}
         alt={item.asset.alt}
         width={item.asset.width}
         height={328}
@@ -219,26 +188,15 @@ function AnimatedGalleryItem({
 }
 
 const GalleryGrid = ({ items }) => {
-  const [activeIndex, setActiveIndex] =
-    useState(null);
+  const [activeIndex, setActiveIndex] = useState(null);
 
-  const handleClose = useCallback(
-    () => setActiveIndex(null),
-    [],
-  );
+  const handleClose = useCallback(() => setActiveIndex(null), []);
   const handleNext = useCallback(
-    () =>
-      setActiveIndex(
-        (i) => (i + 1) % items.length,
-      ),
+    () => setActiveIndex((i) => (i + 1) % items.length),
     [items.length],
   );
   const handlePrev = useCallback(
-    () =>
-      setActiveIndex(
-        (i) =>
-          (i - 1 + items.length) % items.length,
-      ),
+    () => setActiveIndex((i) => (i - 1 + items.length) % items.length),
     [items.length],
   );
 
@@ -258,8 +216,7 @@ const GalleryGrid = ({ items }) => {
                   : index > 3
                     ? "span 2"
                     : undefined,
-              gridRow:
-                index > 3 ? "span 1" : undefined,
+              gridRow: index > 3 ? "span 1" : undefined,
             }}
           />
         ))}

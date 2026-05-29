@@ -113,20 +113,23 @@ const BookingForm = ({
       return;
     }
 
-    const response = await fetch("http://localhost:4000/reservations", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: result.data.name,
-        email: result.data.email,
-        table: result.data.table,
-        guests: result.data.guests,
-        date: result.data.date,
-        phone: result.data.phone,
-        eventId: result.data.eventId,
-        ...(result.data.notes ? { notes: result.data.notes } : {}),
-      }),
-    });
+    const response = await fetch(
+      "https://night-club-api-2026-u759.onrender.com/reservations",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: result.data.name,
+          email: result.data.email,
+          table: result.data.table,
+          guests: result.data.guests,
+          date: result.data.date,
+          phone: result.data.phone,
+          eventId: result.data.eventId,
+          ...(result.data.notes ? { notes: result.data.notes } : {}),
+        }),
+      },
+    );
 
     if (response.ok) {
       setSuccess(true);

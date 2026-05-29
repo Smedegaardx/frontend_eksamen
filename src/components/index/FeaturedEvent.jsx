@@ -8,22 +8,16 @@ import HeroCTA from "./HeroCTA";
 
 const FeaturedEvent = ({ event }) => {
   const formattedDate =
-    new Date(event.date).toLocaleDateString(
-      "en-UK",
-      {
-        month: "short",
-        day: "numeric",
-      },
-    ) +
+    new Date(event.date).toLocaleDateString("en-UK", {
+      month: "short",
+      day: "numeric",
+    }) +
     " · " +
-    new Date(event.date).toLocaleTimeString(
-      "en-UK",
-      {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: false,
-      },
-    );
+    new Date(event.date).toLocaleTimeString("en-UK", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
 
   const [isActive, setIsActive] = useState(false);
 
@@ -36,17 +30,13 @@ const FeaturedEvent = ({ event }) => {
       onHoverEnd={() => setIsActive(false)}
       onFocusCapture={() => setIsActive(true)}
       onBlurCapture={(e) => {
-        if (
-          !e.currentTarget.contains(
-            e.relatedTarget,
-          )
-        ) {
+        if (!e.currentTarget.contains(e.relatedTarget)) {
           setIsActive(false);
         }
       }}
     >
       <Image
-        src={`http://localhost:4000/${event.asset.url}`}
+        src={`https://night-club-api-2026-u759.onrender.com/${event.asset.url}`}
         height={event.asset.height}
         width={event.asset.width}
         alt={event.asset.alt}
@@ -90,10 +80,7 @@ const FeaturedEvent = ({ event }) => {
           }}
           className="row-start-1 flex justify-center items-center"
         >
-          <HeroCTA
-            text="book now"
-            link="/"
-          ></HeroCTA>
+          <HeroCTA text="book now" link="/"></HeroCTA>
         </motion.div>
         <motion.div
           variants={{
@@ -112,33 +99,21 @@ const FeaturedEvent = ({ event }) => {
           }}
           className="bg-black/70 row-start-2 py-3 px-2 flex flex-col w-full h-full"
         >
-          <h1 className="text-2xl uppercase">
-            {event.title}
-          </h1>
+          <h1 className="text-2xl uppercase">{event.title}</h1>
           <p className="text-lg leading-7 text-gray-400 mt-2">
             {event.excerpt}
           </p>
-          <p className="text-(--color-brand) mt-auto">
-            {event.location}
-          </p>
+          <p className="text-(--color-brand) mt-auto">{event.location}</p>
         </motion.div>
       </motion.div>
       <div className="bg-(--color-brand) col-start-1 row-start-1 md:row-start-2 self-end px-4 py-2 z-10">
         <div className="flex justify-between md:hidden">
-          <h1 className="text-xl">
-            {formattedDate}
-          </h1>
-          <p className="text-xl">
-            {event.location}
-          </p>
+          <h1 className="text-xl">{formattedDate}</h1>
+          <p className="text-xl">{event.location}</p>
         </div>
         <div className="justify-between hidden md:flex">
-          <h1 className="text-xl">
-            {event.title}
-          </h1>
-          <p className="text-xl">
-            {formattedDate}
-          </p>
+          <h1 className="text-xl">{event.title}</h1>
+          <p className="text-xl">{formattedDate}</p>
         </div>
       </div>
     </motion.div>

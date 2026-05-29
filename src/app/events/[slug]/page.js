@@ -7,7 +7,9 @@ import Siteheader from "@/components/Siteheader";
 const EventPage = async ({ params }) => {
   const { slug } = await params;
 
-  const res = await fetch("http://localhost:4000/events");
+  const res = await fetch(
+    "https://night-club-api-2026-u759.onrender.com/events",
+  );
   const events = await res.json();
 
   const event = events.find((event) => event.slug === slug);
@@ -22,7 +24,7 @@ const EventPage = async ({ params }) => {
   }
 
   const commentsRes = await fetch(
-    `http://localhost:4000/comments?eventId=${event.id}`,
+    `https://night-club-api-2026-u759.onrender.com/comments?eventId=${event.id}`,
   );
 
   const comments = await commentsRes.json();

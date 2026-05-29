@@ -4,13 +4,17 @@ import Header from "@/components/Header/Header";
 import Siteheader from "@/components/Siteheader";
 
 async function getEvents() {
-  const res = await fetch("http://localhost:4000/events");
+  const res = await fetch(
+    "https://night-club-api-2026-u759.onrender.com/events",
+  );
   if (!res.ok) throw new Error("Failed to fetch events");
   return res.json();
 }
 
 async function getReservations() {
-  const res = await fetch("http://localhost:4000/reservations");
+  const res = await fetch(
+    "https://night-club-api-2026-u759.onrender.com/reservations",
+  );
   if (!res.ok) throw new Error("Failed to fetch reservations");
   return res.json();
 }
