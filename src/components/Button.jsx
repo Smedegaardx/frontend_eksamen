@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Button = ({ buttonText }) => {
   return (
-    <motion.button
+    <motion.div
       initial="rest"
       whileHover="hover"
       className="relative w-45 pb-5 pt-5 cursor-pointer uppercase text-lg"
@@ -13,30 +13,42 @@ const Button = ({ buttonText }) => {
           rest: { scaleX: 0 },
           hover: { scaleX: 1 },
         }}
-        transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="absolute top-0 left-0 h-0.75 w-full bg-brand origin-right z-2"
+        transition={{
+          duration: 0.35,
+          ease: "easeInOut",
+        }}
+        className="absolute top-0 left-0 h-0.75 w-full bg-[oklch(0.629 0.2004 358.58)] origin-right z-2"
       />
       <motion.div
         variants={{
           rest: { scaleX: 0 },
           hover: { scaleX: 1 },
         }}
-        transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="absolute bottom-0 left-0 h-0.75 w-full bg-brand origin-left z-2"
+        transition={{
+          duration: 0.35,
+          ease: "easeInOut",
+        }}
+        className="absolute bottom-0 left-0 h-0.75 w-full bg-[oklch(0.629 0.2004 358.58)] origin-left z-2"
       />
 
       <div className="absolute top-0 left-0 h-0.75 w-full bg-white" />
       <div className="absolute bottom-0 left-0 h-0.75 w-full bg-white" />
       <motion.p
+        className="text-center"
         variants={{
           rest: { color: "oklch(1 0 0)" },
-          hover: { color: "oklch(0.6535 0.2419 9.27)" },
+          hover: {
+            color: "oklch(0.629 0.2004 358.58)",
+          },
         }}
-        transition={{ duration: 0.35, ease: "easeInOut" }}
+        transition={{
+          duration: 0.35,
+          ease: "easeInOut",
+        }}
       >
         {buttonText}
       </motion.p>
-    </motion.button>
+    </motion.div>
   );
 };
 

@@ -3,7 +3,6 @@
 import HeroCTA from "./HeroCTA";
 import Herobtn from "./Herobtn";
 
-import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -14,7 +13,11 @@ const backgrounds = [
 
 const Hero = () => {
   const [bg] = useState(
-    backgrounds[Math.floor(Math.random() * backgrounds.length)],
+    backgrounds[
+      Math.floor(
+        Math.random() * backgrounds.length,
+      )
+    ],
   );
 
   return (
@@ -39,12 +42,12 @@ const Hero = () => {
           ease: [0.25, 0.46, 0.45, 0.94],
         }}
       >
-        <Image
+        <img
           src="/assets/icon/Logo.svg"
           alt="Logo"
           width={800}
           height={0}
-        ></Image>
+        ></img>
       </motion.div>
       <motion.h1
         className="tracking-wider md:tracking-[1.55rem] left-2.5 relative text-3xl uppercase mt-3 text-center"
@@ -79,12 +82,13 @@ const Hero = () => {
           ease: [0.25, 0.46, 0.45, 0.94],
         }}
       >
-        <Image
+        <img
           src="/assets/bottom_line.png"
           alt="Lysende streg"
           width={800}
-          height={0}
-        ></Image>
+          height={200}
+          loading="eager"
+        ></img>
       </motion.div>
       <motion.div
         className=" flex gap-6"
@@ -102,7 +106,10 @@ const Hero = () => {
           ease: [0.25, 0.46, 0.45, 0.94],
         }}
       >
-        <Herobtn text="view events" link="/events" />
+        <Herobtn
+          text="view events"
+          link="/events"
+        />
         <HeroCTA text="Book table" link="/" />
       </motion.div>
     </div>

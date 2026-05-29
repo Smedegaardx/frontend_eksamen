@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 import HeaderLogo from "./HeaderLogo";
 import HeaderBtn from "./HeaderBtn";
 import MobileHeaderBtn from "./MobileHeaderBtn";
@@ -14,9 +13,13 @@ const Header = () => {
 
   const getActivePage = () => {
     if (pathname === "/") return "Home";
-    if (pathname === "/events") return "Events";
-    if (pathname === "/book-table") return "Book Table";
-    if (pathname === "/contact") return "Contact us";
+    if (pathname.startsWith("/events"))
+      return "Events";
+
+    if (pathname.startsWith("/book-table"))
+      return "Book Table";
+    if (pathname === "/contact")
+      return "Contact us";
     return "Home";
   };
 
@@ -37,7 +40,9 @@ const Header = () => {
   };
 
   const returnToActive = () => {
-    const activeButton = document.querySelector(`[data-page="${activePage}"]`);
+    const activeButton = document.querySelector(
+      `[data-page="${activePage}"]`,
+    );
 
     if (!activeButton) return;
 
@@ -54,7 +59,7 @@ const Header = () => {
   return (
     <nav
       className="flex gap-10 justify-between lg:justify-around py-6 border-y-4 border-y-(--color-brand) 
-     sticky top-0 overflow-hidden z-9999
+     sticky top-0 overflow-hidden z-5000
 
      bg-[url(/assets/bg/pattern_bg.jpg)] bg-auto bg-blend-overlay bg-stone-950
 
@@ -98,17 +103,17 @@ const Header = () => {
           onMouseEnter={moveUnderline}
           onMouseLeave={returnToActive}
         ></HeaderBtn>
-        <Image
+        <img
           src="/assets/bottom_line2.png"
           width={100}
-          height={0}
+          height={100}
           alt="Pink line"
           className="absolute bottom-6 transition-all duration-300 ease-out"
           style={{
             left: `${underline.left}px`,
             width: `${underline.width}px`,
           }}
-        ></Image>
+        ></img>
       </div>
 
       <div className="flex lg:hidden justify-end items-center mr-6 md:mr-16">
@@ -136,7 +141,11 @@ const Header = () => {
           >
             <IoCloseSharp />
           </button>
-          <MobileHeaderBtn text="Home" link="/" activePage={activePage} />
+          <MobileHeaderBtn
+            text="Home"
+            link="/"
+            activePage={activePage}
+          />
           <MobileHeaderBtn
             text="Events"
             link="/events"

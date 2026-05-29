@@ -1,12 +1,19 @@
 import Image from "next/image";
-import { useState } from "react";
-import { FaPlay, FaPause, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
-import { BsSkipBackwardFill, BsSkipForwardFill } from "react-icons/bs";
+import { useState, useEffect } from "react";
+import {
+  FaPlay,
+  FaPause,
+  FaVolumeMute,
+  FaVolumeUp,
+} from "react-icons/fa";
+import {
+  BsSkipBackwardFill,
+  BsSkipForwardFill,
+} from "react-icons/bs";
 
 const CurrentTrack = ({
   tracks,
   track,
-  currentTrack,
   setCurrentTrack,
   audioRef,
   isPlaying,
@@ -24,29 +31,52 @@ const CurrentTrack = ({
     setIsPlaying(!isPlaying);
   };
 
+  useEffect(() => {
+    if (!audioRef.current) return;
+
+    audioRef.current.load();
+  }, [track]);
+
   const nextTrack = () => {
-    setCurrentTrack((prev) => (prev + 1) % tracks.length);
-    setIsPlaying(false);
-  };
-
-  const prevTrack = () => {
-    setCurrentTrack((prev) => (prev === 0 ? tracks.length - 1 : prev - 1));
-    setIsPlaying(false);
-  };
-
-  const muteUnmute = () => {
-    if (audioRef.current.volume > 0) {
-      audioRef.current.volume = 0;
-      setVolume(0);
-    } else if (audioRef.current.volume == 0) {
-      audioRef.current.volume = 0.25;
-      setVolume(0.25);
+    setCurrentTrack(
+      (prev) => (prev + 1) % tracks.length,
+    );
+    if (!isPlaying) {
+      setIsPlaying(false);
+    } else {
+      setIsPlaying(true);
     }
   };
 
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
+  const prevTrack = () => {
+    setCurrentTrack((prev) =>
+      prev === 0 ? tracks.length - 1 : prev - 1,
+    );
+    if (!isPlaying) {
+      setIsPlaying(false);
+    } else {
+      setIsPlaying(true);
+    }
+  };
+
   const [volume, setVolume] = useState(1);
+  const [previousVolume, setPreviousVolume] =
+    useState(1);
+
+  const muteUnmute = () => {
+    if (audioRef.current.volume > 0) {
+      setPreviousVolume(audioRef.current.volume);
+      audioRef.current.volume = 0;
+      setVolume(0);
+    } else {
+      audioRef.current.volume = previousVolume;
+      setVolume(previousVolume);
+    }
+  };
+
+  const [currentTime, setCurrentTime] =
+    useState(0);
+  const [duration, setDuration] = useState(0);
 
   const formatTime = (time) => {
     if (!time) return "00:00";
@@ -54,10 +84,9 @@ const CurrentTrack = ({
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
 
-    return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(
-      2,
-      "0",
-    )}`;
+    return `${String(minutes).padStart(2, "0")}:${String(
+      seconds,
+    ).padStart(2, "0")}`;
   };
 
   return (
@@ -65,11 +94,15 @@ const CurrentTrack = ({
       <audio
         ref={audioRef}
         src={track.src}
+        onEnded={nextTrack}
+        preload="metadata"
         onLoadedMetadata={() => {
           setDuration(audioRef.current.duration);
         }}
         onTimeUpdate={() => {
-          setCurrentTime(audioRef.current.currentTime);
+          setCurrentTime(
+            audioRef.current.currentTime,
+          );
         }}
       />
       <div className="flex gap-8">
@@ -91,18 +124,23 @@ const CurrentTrack = ({
             max={duration}
             value={currentTime}
             onChange={(e) => {
-              audioRef.current.currentTime = e.target.value;
+              audioRef.current.currentTime =
+                e.target.value;
               setCurrentTime(e.target.value);
             }}
-            className="w-full accent-(--color-brand)"
+            className="w-full accent-(--color-brand) cursor-pointer"
           />
 
           <div className="mt-4 flex flex-col lg:flex-row items-center justify-between gap-5">
             <h1>
-              {formatTime(currentTime)} / {formatTime(duration)}
+              {formatTime(currentTime)} /{" "}
+              {formatTime(duration)}
             </h1>
             <div className="flex gap-10">
-              <button onClick={prevTrack} className="text-2xl cursor-pointer">
+              <button
+                onClick={prevTrack}
+                className="text-2xl cursor-pointer"
+              >
                 <BsSkipBackwardFill />
               </button>
 
@@ -110,16 +148,30 @@ const CurrentTrack = ({
                 onClick={togglePlay}
                 className="rounded-full border-4 border-white p-3 cursor-pointer"
               >
-                {isPlaying ? <FaPause /> : <FaPlay />}
+                {isPlaying ? (
+                  <FaPause />
+                ) : (
+                  <FaPlay />
+                )}
               </button>
 
-              <button onClick={nextTrack} className="text-2xl cursor-pointer">
+              <button
+                onClick={nextTrack}
+                className="text-2xl cursor-pointer"
+              >
                 <BsSkipForwardFill />
               </button>
             </div>
             <div className="flex gap-2 ">
-              <button onClick={muteUnmute} className="text-2xl cursor-pointer">
-                {volume === 0 ? <FaVolumeMute /> : <FaVolumeUp />}
+              <button
+                onClick={muteUnmute}
+                className="text-2xl cursor-pointer"
+              >
+                {volume === 0 ? (
+                  <FaVolumeMute />
+                ) : (
+                  <FaVolumeUp />
+                )}
               </button>
 
               <input
@@ -128,12 +180,15 @@ const CurrentTrack = ({
                 max="1"
                 step="0.01"
                 value={volume}
-                className="accent-(--color-brand)"
+                className="accent-(--color-brand) cursor-pointer"
                 onChange={(e) => {
-                  const newVolume = Number(e.target.value);
+                  const newVolume = Number(
+                    e.target.value,
+                  );
 
                   setVolume(newVolume);
-                  audioRef.current.volume = newVolume;
+                  audioRef.current.volume =
+                    newVolume;
                 }}
               />
             </div>
