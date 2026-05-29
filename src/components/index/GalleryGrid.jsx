@@ -1,5 +1,7 @@
 "use client";
 
+import { getImageUrl } from "@/lib/getImageUrl";
+
 import { useRef, useState, useEffect, useCallback } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import Image from "next/image";
@@ -70,7 +72,7 @@ function Lightbox({ items, activeIndex, onClose, onNext, onPrev }) {
           onClick={(e) => e.stopPropagation()}
         >
           <Image
-            src={`https://night-club-api-2026-u759.onrender.com/${item.asset.url}`}
+            src={getImageUrl(item.asset.url)}
             alt={item.asset.alt}
             width={item.asset.width}
             height={item.asset.height ?? 800}
@@ -177,7 +179,7 @@ function AnimatedGalleryItem({ item, index, style, onClick }) {
       />
 
       <Image
-        src={`https://night-club-api-2026-u759.onrender.com/${item.asset.url}`}
+        src={getImageUrl(item.asset.url)}
         alt={item.asset.alt}
         width={item.asset.width}
         height={328}

@@ -1,4 +1,5 @@
 "use client";
+import { getImageUrl } from "@/lib/getImageUrl";
 
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -36,7 +37,7 @@ const FeaturedEvent = ({ event }) => {
       }}
     >
       <Image
-        src={`https://night-club-api-2026-u759.onrender.com/${event.asset.url}`}
+        src={getImageUrl(event.asset.url)}
         height={event.asset.height}
         width={event.asset.width}
         alt={event.asset.alt}

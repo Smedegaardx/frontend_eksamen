@@ -1,3 +1,5 @@
+import { getImageUrl } from "@/lib/getImageUrl";
+
 import Image from "next/image";
 import HeroCTA from "../index/HeroCTA";
 
@@ -23,14 +25,14 @@ const EventInfo = ({ event }) => {
     <div className="bg-[url(/assets/bg/pattern_bg.jpg)]">
       <div className={`max-w-400 mx-auto pt-20 px-5 3xl:px-0`}>
         <Image
-          src={`https://night-club-api-2026-u759.onrender.com/${event.heroAsset.url}`}
+          src={getImageUrl(event.heroAsset.url)}
           height={event.heroAsset.height}
           width={1600}
           alt={event.heroAsset.height}
           className="hidden md:block"
         ></Image>
         <Image
-          src={`https://night-club-api-2026-u759.onrender.com/${event.asset.url}`}
+          src={getImageUrl(event.asset.url)}
           height={event.asset.height}
           width={1600}
           alt={event.asset.height}

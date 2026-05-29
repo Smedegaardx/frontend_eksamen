@@ -1,3 +1,5 @@
+import { getImageUrl } from "@/lib/getImageUrl";
+
 import EventDescription from "./EventDescription";
 import Image from "next/image";
 
@@ -10,14 +12,14 @@ const EventSimple = ({ event, imagelast }) => {
         `}
       >
         <Image
-          src={`https://night-club-api-2026-u759.onrender.com/${event.asset.url}`}
+          src={getImageUrl(event.asset.url)}
           width={event.asset.width}
           height={event.asset.height}
           alt={event.asset.alt}
           className="block md:hidden"
         />
         <Image
-          src={`https://night-club-api-2026-u759.onrender.com/${event.heroAsset.url}`}
+          src={getImageUrl(event.heroAsset.url)}
           width={event.heroAsset.width}
           height={event.heroAsset.height}
           alt={event.heroAsset.alt}

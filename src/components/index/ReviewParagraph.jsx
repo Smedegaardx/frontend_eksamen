@@ -1,3 +1,5 @@
+import { getImageUrl } from "@/lib/getImageUrl";
+
 import Image from "next/image";
 
 import Iconbtn from "../Iconbtn";
@@ -12,7 +14,7 @@ const ReviewParagraph = ({ reviews, activeReview }) => {
   return (
     <div className="flex flex-col items-center">
       <Image
-        src={`https://night-club-api-2026-u759.onrender.com/${currentReview.asset.url}`}
+        src={getImageUrl(currentReview.asset.url)}
         alt={currentReview.asset.alt}
         height={currentReview.asset.height}
         width={currentReview.asset.width}
