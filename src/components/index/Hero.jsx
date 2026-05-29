@@ -2,8 +2,7 @@
 
 import HeroCTA from "./HeroCTA";
 import Herobtn from "./Herobtn";
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const backgrounds = [
@@ -12,13 +11,14 @@ const backgrounds = [
 ];
 
 const Hero = () => {
-  const [bg] = useState(
-    backgrounds[
-      Math.floor(
-        Math.random() * backgrounds.length,
-      )
-    ],
-  );
+  const [bg, setBg] = useState("/assets/bg/header_bg_1.jpg");
+
+  useEffect(() => {
+    const randomBg =
+      backgrounds[Math.floor(Math.random() * backgrounds.length)];
+
+    setBg(randomBg);
+  }, []);
 
   return (
     <div
@@ -106,10 +106,7 @@ const Hero = () => {
           ease: [0.25, 0.46, 0.45, 0.94],
         }}
       >
-        <Herobtn
-          text="view events"
-          link="/events"
-        />
+        <Herobtn text="view events" link="/events" />
         <HeroCTA text="Book table" link="/" />
       </motion.div>
     </div>
