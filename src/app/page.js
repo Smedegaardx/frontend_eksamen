@@ -22,6 +22,7 @@ async function getTestimonials() {
 }
 
 async function getEvents() {
+  console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
   const res = await fetch(
     "https://night-club-api-2026-u759.onrender.com/events",
   );
