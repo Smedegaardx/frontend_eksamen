@@ -91,7 +91,10 @@ const EventInfo = ({ event }) => {
           </div>
         </div>
         <div className="flex justify-center mt-10 pb-30">
-          <HeroCTA text="book table" link="/"></HeroCTA>
+          <HeroCTA
+            text="book table"
+            link={`/reservations/${event.slug}`}
+          ></HeroCTA>
         </div>
       </div>
     </div>

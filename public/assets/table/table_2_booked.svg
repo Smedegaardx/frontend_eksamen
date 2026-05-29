@@ -1,0 +1,15 @@
+<svg width="198" height="156" viewBox="0 0 198 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="49" y="49" width="100" height="58" fill="#181818"/>
+<rect x="158" y="60" width="30" height="38" fill="#181818"/>
+<path d="M188 60H193C195.761 60 198 62.2386 198 65V93C198 95.7614 195.761 98 193 98H188V60Z" fill="#FF2A70"/>
+<rect x="40" y="98" width="30" height="38" transform="rotate(-180 40 98)" fill="#181818"/>
+<path d="M10 98H5C2.23858 98 0 95.7614 0 93L0 65C0 62.2386 2.23858 60 5 60H10L10 98Z" fill="#FF2A70"/>
+<rect x="55" y="40" width="30" height="38" transform="rotate(-90 55 40)" fill="#181818"/>
+<rect x="55" y="146" width="30" height="38" transform="rotate(-90 55 146)" fill="#181818"/>
+<path d="M55 10V5C55 2.23858 57.2386 0 60 0L88 0C90.7614 0 93 2.23858 93 5V10L55 10Z" fill="#FF2A70"/>
+<rect x="105" y="40" width="30" height="38" transform="rotate(-90 105 40)" fill="#181818"/>
+<path d="M105 10V5C105 2.23858 107.239 0 110 0L138 0C140.761 0 143 2.23858 143 5V10L105 10Z" fill="#FF2A70"/>
+<path d="M93 146V151C93 153.761 90.7614 156 88 156H60C57.2386 156 55 153.761 55 151V146H93Z" fill="#FF2A70"/>
+<rect x="105" y="146" width="30" height="38" transform="rotate(-90 105 146)" fill="#181818"/>
+<path d="M143 146V151C143 153.761 140.761 156 138 156H110C107.239 156 105 153.761 105 151V146H143Z" fill="#FF2A70"/>
+</svg>
