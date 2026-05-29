@@ -4,7 +4,7 @@ import { useState } from "react";
 import { z } from "zod";
 import Button from "../Button";
 
-const emailSchema = z.email();
+const emailSchema = z.string().email();
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
@@ -12,14 +12,29 @@ const Newsletter = () => {
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const handleBlur = () => {
+    if (!email) return;
+
+    const normalizedEmail = email.trim().toLowerCase();
+
+    const result = emailSchema.safeParse(normalizedEmail);
+
+    if (!result.success) {
+      setError("Please enter a valid email");
+    } else {
+      setError("");
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     setError("");
     setSuccess("");
 
-    const validatedEmail =
-      emailSchema.safeParse(email);
+    const normalizedEmail = email.trim().toLowerCase();
+
+    const validatedEmail = emailSchema.safeParse(normalizedEmail);
 
     if (!validatedEmail.success) {
       setError("Please enter a valid email");
@@ -29,38 +44,32 @@ const Newsletter = () => {
     try {
       setLoading(true);
 
-      const response = await fetch(
-        "http://localhost:4000/newsletters",
-      );
+      const response = await fetch("http://localhost:4000/newsletters");
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch newsletters");
+      }
 
       const newsletters = await response.json();
 
       const emailExists = newsletters.some(
-        (item) =>
-          item.email.toLowerCase() ===
-          email.toLowerCase(),
+        (item) => item.email.toLowerCase() === normalizedEmail,
       );
 
       if (emailExists) {
-        setError(
-          "This email is already subscribed",
-        );
-        setLoading(false);
+        setError("This email is already subscribed");
         return;
       }
 
-      const postResponse = await fetch(
-        "http://localhost:4000/newsletters",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email,
-          }),
+      const postResponse = await fetch("http://localhost:4000/newsletters", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify({
+          email: normalizedEmail,
+        }),
+      });
 
       if (!postResponse.ok) {
         throw new Error("Failed to subscribe");
@@ -69,8 +78,8 @@ const Newsletter = () => {
       setSuccess("Successfully subscribed!");
       setEmail("");
     } catch (err) {
-      setError("Something went wrong");
       console.error(err);
+      setError("Something went wrong");
     } finally {
       setLoading(false);
     }
@@ -84,12 +93,8 @@ const Newsletter = () => {
         </h2>
 
         <p className="text-center mt-2 mb-10 text-lg">
-          Subscribe to our newsletter and never
-          miss an
-          <span className="text-brand">
-            {" "}
-            Event
-          </span>
+          Subscribe to our newsletter and never miss an
+          <span className="text-brand"> Event</span>
         </p>
       </div>
 
@@ -102,31 +107,19 @@ const Newsletter = () => {
           type="email"
           placeholder="Enter your email"
           value={email}
-          onChange={(e) =>
-            setEmail(e.target.value)
-          }
+          onChange={(e) => setEmail(e.target.value)}
+          onBlur={handleBlur}
           className="border-b-3 border-white px-4 py-4 w-full max-w-sm text-white bg-transparent focus:outline-none focus:border-brand placeholder:capitalize placeholder:text-white"
         />
 
-        <Button
-          type="submit"
-          className="ml-4"
-          buttonText={
-            loading ? "Loading..." : "Subscribe"
-          }
-        />
+        <button className="ml-4" type="submit">
+          <Button buttonText="Book Now" />
+        </button>
       </form>
 
       <div className="h-8 mt-4 text-center">
-        {error && (
-          <p className="text-red-500">{error}</p>
-        )}
-
-        {!error && success && (
-          <p className="text-green-500">
-            {success}
-          </p>
-        )}
+        {error && <p className="text-red-500">{error}</p>}
+        {!error && success && <p className="text-green-500">{success}</p>}
       </div>
     </section>
   );
