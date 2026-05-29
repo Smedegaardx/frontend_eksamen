@@ -50,13 +50,16 @@ const ContactForm = () => {
       date: new Date().toISOString(),
     };
 
-    const response = await fetch("http://localhost:4000/contact_messages", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      "https://night-club-api-2026-u759.onrender.com/contact_messages",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       },
-      body: JSON.stringify(payload),
-    });
+    );
 
     if (response.ok) {
       setSuccess(true);

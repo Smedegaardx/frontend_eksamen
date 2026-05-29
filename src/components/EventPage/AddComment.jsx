@@ -67,11 +67,14 @@ const AddComment = ({ eventId, onCommentAdded }) => {
     };
 
     try {
-      const res = await fetch("http://localhost:4000/comments", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const res = await fetch(
+        "https://night-club-api-2026-u759.onrender.com/comments",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        },
+      );
       const newComment = await res.json();
       onCommentAdded(newComment);
       setErrors({});

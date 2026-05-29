@@ -44,7 +44,9 @@ const Newsletter = () => {
     try {
       setLoading(true);
 
-      const response = await fetch("http://localhost:4000/newsletters");
+      const response = await fetch(
+        "https://night-club-api-2026-u759.onrender.com/newsletters",
+      );
 
       if (!response.ok) {
         throw new Error("Failed to fetch newsletters");
@@ -61,15 +63,18 @@ const Newsletter = () => {
         return;
       }
 
-      const postResponse = await fetch("http://localhost:4000/newsletters", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const postResponse = await fetch(
+        "https://night-club-api-2026-u759.onrender.com/newsletters",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: normalizedEmail,
+          }),
         },
-        body: JSON.stringify({
-          email: normalizedEmail,
-        }),
-      });
+      );
 
       if (!postResponse.ok) {
         throw new Error("Failed to subscribe");

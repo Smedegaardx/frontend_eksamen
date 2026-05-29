@@ -11,7 +11,7 @@ import GallerySection from "@/components/index/GallerySection";
 
 async function getTestimonials() {
   const res = await fetch(
-    "http://localhost:4000/testimonials",
+    "https://night-club-api-2026-u759.onrender.com/testimonials",
   );
 
   if (!res.ok) {
@@ -23,7 +23,7 @@ async function getTestimonials() {
 
 async function getEvents() {
   const res = await fetch(
-    "http://localhost:4000/events",
+    "https://night-club-api-2026-u759.onrender.com/events",
   );
 
   if (!res.ok) {
@@ -42,15 +42,11 @@ export default async function Home() {
       <Hero />
       <Header></Header>
       <Welcome></Welcome>
-      <FeaturedEventsSection
-        events={eventsAPI}
-      ></FeaturedEventsSection>
+      <FeaturedEventsSection events={eventsAPI}></FeaturedEventsSection>
       <GallerySection></GallerySection>
       <TrackSection></TrackSection>
       <VideoSection></VideoSection>
-      <ReviewSection
-        reviews={TestimonialsAPI}
-      ></ReviewSection>
+      <ReviewSection reviews={TestimonialsAPI}></ReviewSection>
       <Newsletter></Newsletter>
       <Footer></Footer>
     </div>

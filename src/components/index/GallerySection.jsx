@@ -2,7 +2,9 @@ import Sectionheader from "./Sectionheader";
 import GalleryGrid from "./GalleryGrid";
 
 const GallerySection = async () => {
-  const res = await fetch("http://localhost:4000/gallery");
+  const res = await fetch(
+    "https://night-club-api-2026-u759.onrender.com/gallery",
+  );
 
   if (!res.ok) {
     throw new Error("Failed to fetch API");
