@@ -17,7 +17,7 @@ const Button = ({ buttonText }) => {
           duration: 0.35,
           ease: "easeInOut",
         }}
-        className="absolute top-0 left-0 h-0.75 w-full bg-[oklch(0.629 0.2004 358.58)] origin-right z-2"
+        className="absolute top-0 left-0 h-0.75 w-full bg-(--color-brand) origin-right z-2"
       />
       <motion.div
         variants={{
@@ -28,7 +28,7 @@ const Button = ({ buttonText }) => {
           duration: 0.35,
           ease: "easeInOut",
         }}
-        className="absolute bottom-0 left-0 h-0.75 w-full bg-[oklch(0.629 0.2004 358.58)] origin-left z-2"
+        className="absolute bottom-0 left-0 h-0.75 w-full bg-(--color-brand) origin-left z-2"
       />
 
       <div className="absolute top-0 left-0 h-0.75 w-full bg-white" />
