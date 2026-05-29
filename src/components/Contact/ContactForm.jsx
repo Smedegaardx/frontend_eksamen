@@ -98,8 +98,6 @@ const ContactForm = () => {
             )}
           </div>
         </div>
-
-        {/* EMAIL */}
         <div className="w-full">
           <input
             className="w-full border border-white text-white placeholder:text-white/80 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand p-3"
@@ -114,15 +112,12 @@ const ContactForm = () => {
             }
             onBlur={(e) => validateField("email", e.target.value)}
           />
-
           <div className="self-start min-h-5">
             {errors.email?.[0] && (
               <p className="text-red-400 text-sm">{errors.email[0]}</p>
             )}
           </div>
         </div>
-
-        {/* CONTENT */}
         <div className="w-full">
           <textarea
             className="w-full border border-white text-white placeholder:text-white/80 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand p-3 min-h-48 resize-y"
@@ -136,12 +131,10 @@ const ContactForm = () => {
             }
             onBlur={(e) => validateField("content", e.target.value)}
           />
-
           <div className="self-start min-h-5">
             {errors.content?.[0] && (
               <p className="text-red-400 text-sm">{errors.content[0]}</p>
             )}
-
             {success && (
               <p className="text-green-400 text-sm self-start">
                 Your message has been sent.
