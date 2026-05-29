@@ -1,0 +1,19 @@
+<svg width="258" height="156" viewBox="0 0 258 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="49" y="49" width="160" height="58" fill="#181818"/>
+<rect x="218" y="60" width="30" height="38" fill="#181818"/>
+<path d="M248 60H253C255.761 60 258 62.2386 258 65V93C258 95.7614 255.761 98 253 98H248V60Z" fill="#FF2A70"/>
+<rect x="40" y="98" width="30" height="38" transform="rotate(-180 40 98)" fill="#181818"/>
+<path d="M10 98H5C2.23858 98 0 95.7614 0 93L0 65C0 62.2386 2.23858 60 5 60H10L10 98Z" fill="#FF2A70"/>
+<rect x="60" y="40" width="30" height="38" transform="rotate(-90 60 40)" fill="#181818"/>
+<rect x="60" y="146" width="30" height="38" transform="rotate(-90 60 146)" fill="#181818"/>
+<path d="M60 10V5C60 2.23858 62.2386 0 65 0L93 0C95.7614 0 98 2.23858 98 5V10L60 10Z" fill="#FF2A70"/>
+<rect x="110" y="40" width="30" height="38" transform="rotate(-90 110 40)" fill="#181818"/>
+<path d="M110 10V5C110 2.23858 112.239 0 115 0L143 0C145.761 0 148 2.23858 148 5V10L110 10Z" fill="#FF2A70"/>
+<rect x="160" y="40" width="30" height="38" transform="rotate(-90 160 40)" fill="#181818"/>
+<path d="M160 10V5C160 2.23858 162.239 0 165 0L193 0C195.761 0 198 2.23858 198 5V10L160 10Z" fill="#FF2A70"/>
+<path d="M98 146V151C98 153.761 95.7614 156 93 156H65C62.2386 156 60 153.761 60 151V146H98Z" fill="#FF2A70"/>
+<rect x="110" y="146" width="30" height="38" transform="rotate(-90 110 146)" fill="#181818"/>
+<path d="M148 146V151C148 153.761 145.761 156 143 156H115C112.239 156 110 153.761 110 151V146H148Z" fill="#FF2A70"/>
+<rect x="160" y="146" width="30" height="38" transform="rotate(-90 160 146)" fill="#181818"/>
+<path d="M198 146V151C198 153.761 195.761 156 193 156H165C162.239 156 160 153.761 160 151V146H198Z" fill="#FF2A70"/>
+</svg>

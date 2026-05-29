@@ -132,7 +132,7 @@ const EventInfo = ({ event }) => {
         <div className="flex justify-center mt-10 pb-30">
           <HeroCTA
             text="book table"
-            link="/"
+            link={`/reservations/${event.slug}`}
           ></HeroCTA>
         </div>
       </div>

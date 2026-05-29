@@ -91,7 +91,7 @@ const Header = () => {
         ></HeaderBtn>
         <HeaderBtn
           text="Book Table"
-          link={"/book-table"}
+          link={"/reservations"}
           activePage={activePage}
           onMouseEnter={moveUnderline}
           onMouseLeave={returnToActive}
