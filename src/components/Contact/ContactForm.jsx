@@ -9,9 +9,7 @@ const contactSchema = z.object({
     .string()
     .min(2, "Name must be at least 2 characters")
     .max(30, "Name must be less than 30 characters"),
-
   email: z.email("Invalid email address"),
-
   content: z
     .string()
     .min(10, "Comment must be at least 10 characters")
@@ -20,9 +18,7 @@ const contactSchema = z.object({
 
 const ContactForm = () => {
   const [success, setSuccess] = useState(false);
-
   const [errors, setErrors] = useState({});
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,9 +27,7 @@ const ContactForm = () => {
 
   const validateField = (field, value) => {
     const fieldSchema = contactSchema.shape[field];
-
     const result = fieldSchema.safeParse(value);
-
     setErrors((prev) => ({
       ...prev,
       [field]: result.success
@@ -44,7 +38,6 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const result = contactSchema.safeParse(formData);
 
     if (!result.success) {
@@ -67,15 +60,12 @@ const ContactForm = () => {
 
     if (response.ok) {
       setSuccess(true);
-
       setErrors({});
-
       setFormData({
         name: "",
         email: "",
         content: "",
       });
-
       setTimeout(() => setSuccess(false), 5000);
     }
   };
@@ -87,7 +77,6 @@ const ContactForm = () => {
         noValidate
         className="flex flex-col items-center gap-4 w-full max-w-lg"
       >
-        {/* NAME */}
         <div className="w-full">
           <input
             className="w-full border border-white text-white placeholder:text-white/80 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand p-3"
@@ -109,8 +98,6 @@ const ContactForm = () => {
             )}
           </div>
         </div>
-
-        {/* EMAIL */}
         <div className="w-full">
           <input
             className="w-full border border-white text-white placeholder:text-white/80 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand p-3"
@@ -125,15 +112,12 @@ const ContactForm = () => {
             }
             onBlur={(e) => validateField("email", e.target.value)}
           />
-
           <div className="self-start min-h-5">
             {errors.email?.[0] && (
               <p className="text-red-400 text-sm">{errors.email[0]}</p>
             )}
           </div>
         </div>
-
-        {/* CONTENT */}
         <div className="w-full">
           <textarea
             className="w-full border border-white text-white placeholder:text-white/80 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand p-3 min-h-48 resize-y"
@@ -147,12 +131,10 @@ const ContactForm = () => {
             }
             onBlur={(e) => validateField("content", e.target.value)}
           />
-
           <div className="self-start min-h-5">
             {errors.content?.[0] && (
               <p className="text-red-400 text-sm">{errors.content[0]}</p>
             )}
-
             {success && (
               <p className="text-green-400 text-sm self-start">
                 Your message has been sent.
